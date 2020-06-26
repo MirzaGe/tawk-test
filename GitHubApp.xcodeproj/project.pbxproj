@@ -18,6 +18,8 @@
 		4AFD684E24A5F53A00668714 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684D24A5F53A00668714 /* UsersViewController.swift */; };
 		4AFD685024A5F60800668714 /* UsersScreenComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684F24A5F60800668714 /* UsersScreenComposer.swift */; };
 		4AFD685424A607B000668714 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD685324A607B000668714 /* AppManager.swift */; };
+		4AFD685624A610A200668714 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD685524A610A200668714 /* Colors.xcassets */; };
+		4AFD685A24A611BC00668714 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD685924A611BC00668714 /* AppColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		4AFD684D24A5F53A00668714 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		4AFD684F24A5F60800668714 /* UsersScreenComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersScreenComposer.swift; sourceTree = "<group>"; };
 		4AFD685324A607B000668714 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		4AFD685524A610A200668714 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4AFD685924A611BC00668714 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 				4AFD683E24A5E24800668714 /* Screens */,
 				4AFD680B24A5DDDC00668714 /* AppDelegate.swift */,
 				4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */,
+				4AFD685924A611BC00668714 /* AppColors.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				4AFD681424A5DDE300668714 /* Assets.xcassets */,
+				4AFD685524A610A200668714 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFD685624A610A200668714 /* Colors.xcassets in Resources */,
 				4AFD681824A5DDE300668714 /* LaunchScreen.storyboard in Resources */,
 				4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */,
 			);
@@ -336,6 +343,7 @@
 				4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */,
 				4AFD685024A5F60800668714 /* UsersScreenComposer.swift in Sources */,
 				4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */,
+				4AFD685A24A611BC00668714 /* AppColors.swift in Sources */,
 				4AFD684424A5E93A00668714 /* MainCoordinator.swift in Sources */,
 				4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */,
 			);
