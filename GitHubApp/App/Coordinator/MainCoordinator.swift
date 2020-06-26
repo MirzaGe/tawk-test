@@ -14,12 +14,15 @@ class MainCoordinator: CoordinatorType {
     
     // MARK: - Navigation
     lazy var navigationVc: UINavigationController = {
-        let navigationVc = UINavigationController(rootViewController: UIViewController())
+        let navigationVc = UINavigationController(rootViewController: usersVc)
         return navigationVc
     }()
     
     // MARK: - Screens
-    
+    lazy var usersVc: UsersViewController = {
+        let vc = UsersViewController()
+        return vc
+    }()
     
     func start() {
         

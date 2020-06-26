@@ -1,5 +1,5 @@
 //
-//  SplashScreenViewController.swift
+//  UsersViewController.swift
 //  GitHubApp
 //
 //  Created by John Roque Jorillo on 6/26/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SplashScreenViewController: UIViewController {
+class UsersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

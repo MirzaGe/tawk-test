@@ -9,16 +9,15 @@
 /* Begin PBXBuildFile section */
 		4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680B24A5DDDC00668714 /* AppDelegate.swift */; };
 		4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */; };
-		4AFD681024A5DDDC00668714 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680F24A5DDDC00668714 /* ViewController.swift */; };
-		4AFD681324A5DDDC00668714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681124A5DDDC00668714 /* Main.storyboard */; };
 		4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681424A5DDE300668714 /* Assets.xcassets */; };
 		4AFD681824A5DDE300668714 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681624A5DDE300668714 /* LaunchScreen.storyboard */; };
 		4AFD682324A5DDE300668714 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD682224A5DDE300668714 /* GitHubAppTests.swift */; };
 		4AFD682E24A5DDE300668714 /* GitHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD682D24A5DDE300668714 /* GitHubAppUITests.swift */; };
 		4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684124A5E8E600668714 /* CoordinatorType.swift */; };
 		4AFD684424A5E93A00668714 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684324A5E93A00668714 /* MainCoordinator.swift */; };
-		4AFD684924A5EC8400668714 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684824A5EC8300668714 /* SplashScreenViewController.swift */; };
-		4AFD684B24A5ED5600668714 /* SplashScreenComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684A24A5ED5600668714 /* SplashScreenComposer.swift */; };
+		4AFD684E24A5F53A00668714 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684D24A5F53A00668714 /* UsersViewController.swift */; };
+		4AFD685024A5F60800668714 /* UsersScreenComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684F24A5F60800668714 /* UsersScreenComposer.swift */; };
+		4AFD685424A607B000668714 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD685324A607B000668714 /* AppManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +41,6 @@
 		4AFD680824A5DDDC00668714 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD680B24A5DDDC00668714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4AFD680F24A5DDDC00668714 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4AFD681224A5DDDC00668714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AFD681424A5DDE300668714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AFD681724A5DDE300668714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AFD681924A5DDE300668714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,8 +52,9 @@
 		4AFD682F24A5DDE300668714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AFD684124A5E8E600668714 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		4AFD684324A5E93A00668714 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		4AFD684824A5EC8300668714 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
-		4AFD684A24A5ED5600668714 /* SplashScreenComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenComposer.swift; sourceTree = "<group>"; };
+		4AFD684D24A5F53A00668714 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		4AFD684F24A5F60800668714 /* UsersScreenComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersScreenComposer.swift; sourceTree = "<group>"; };
+		4AFD685324A607B000668714 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +105,9 @@
 		4AFD680A24A5DDDC00668714 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
-				4AFD683D24A5DF0200668714 /* SupportingFiles */,
-				4AFD683C24A5DEF800668714 /* Resources */,
 				4AFD683B24A5DEF000668714 /* App */,
-				4AFD680F24A5DDDC00668714 /* ViewController.swift */,
-				4AFD681124A5DDDC00668714 /* Main.storyboard */,
-				4AFD681624A5DDE300668714 /* LaunchScreen.storyboard */,
+				4AFD683C24A5DEF800668714 /* Resources */,
+				4AFD683D24A5DF0200668714 /* SupportingFiles */,
 			);
 			path = GitHubApp;
 			sourceTree = "<group>";
@@ -138,6 +133,7 @@
 		4AFD683B24A5DEF000668714 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4AFD685224A607A500668714 /* Managers */,
 				4AFD683F24A5E33200668714 /* Coordinator */,
 				4AFD683E24A5E24800668714 /* Screens */,
 				4AFD680B24A5DDDC00668714 /* AppDelegate.swift */,
@@ -165,7 +161,8 @@
 		4AFD683E24A5E24800668714 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				4AFD684524A5EB3500668714 /* SplashScreen */,
+				4AFD685124A604AF00668714 /* Launch */,
+				4AFD684C24A5F52400668714 /* Users */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -179,13 +176,29 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		4AFD684524A5EB3500668714 /* SplashScreen */ = {
+		4AFD684C24A5F52400668714 /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				4AFD684824A5EC8300668714 /* SplashScreenViewController.swift */,
-				4AFD684A24A5ED5600668714 /* SplashScreenComposer.swift */,
+				4AFD684D24A5F53A00668714 /* UsersViewController.swift */,
+				4AFD684F24A5F60800668714 /* UsersScreenComposer.swift */,
 			);
-			path = SplashScreen;
+			path = Users;
+			sourceTree = "<group>";
+		};
+		4AFD685124A604AF00668714 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD681624A5DDE300668714 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		4AFD685224A607A500668714 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD685324A607B000668714 /* AppManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +307,6 @@
 			files = (
 				4AFD681824A5DDE300668714 /* LaunchScreen.storyboard in Resources */,
 				4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */,
-				4AFD681324A5DDDC00668714 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,12 +331,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AFD681024A5DDDC00668714 /* ViewController.swift in Sources */,
+				4AFD685424A607B000668714 /* AppManager.swift in Sources */,
+				4AFD684E24A5F53A00668714 /* UsersViewController.swift in Sources */,
 				4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */,
-				4AFD684924A5EC8400668714 /* SplashScreenViewController.swift in Sources */,
+				4AFD685024A5F60800668714 /* UsersScreenComposer.swift in Sources */,
 				4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */,
 				4AFD684424A5E93A00668714 /* MainCoordinator.swift in Sources */,
-				4AFD684B24A5ED5600668714 /* SplashScreenComposer.swift in Sources */,
 				4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,14 +373,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4AFD681124A5DDDC00668714 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4AFD681224A5DDDC00668714 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4AFD681624A5DDE300668714 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -508,7 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnroque.GitHubApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -526,7 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnroque.GitHubApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

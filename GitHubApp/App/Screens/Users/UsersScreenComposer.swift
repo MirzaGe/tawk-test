@@ -1,5 +1,5 @@
 //
-//  SplashScreenComposite.swift
+//  UsersScreenComposer.swift
 //  GitHubApp
 //
 //  Created by John Roque Jorillo on 6/26/20.
