@@ -16,6 +16,21 @@ class UsersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }   
+        setupUI()
+    }
+    
+    private func setupUI() {
+        setupNav()
+        setupView()
+    }
+    
+    private func setupNav() {
+        self.title = AppStrings.usersScreenTitle.rawValue.getLocalize()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    private func setupView() {
+        self.view.backgroundColor = AppColors.backgroundColor.value
+    }
 
 }
