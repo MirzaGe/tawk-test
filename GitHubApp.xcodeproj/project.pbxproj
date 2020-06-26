@@ -15,6 +15,10 @@
 		4AFD681824A5DDE300668714 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681624A5DDE300668714 /* LaunchScreen.storyboard */; };
 		4AFD682324A5DDE300668714 /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD682224A5DDE300668714 /* GitHubAppTests.swift */; };
 		4AFD682E24A5DDE300668714 /* GitHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD682D24A5DDE300668714 /* GitHubAppUITests.swift */; };
+		4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684124A5E8E600668714 /* CoordinatorType.swift */; };
+		4AFD684424A5E93A00668714 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684324A5E93A00668714 /* MainCoordinator.swift */; };
+		4AFD684924A5EC8400668714 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684824A5EC8300668714 /* SplashScreenViewController.swift */; };
+		4AFD684B24A5ED5600668714 /* SplashScreenComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD684A24A5ED5600668714 /* SplashScreenComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		4AFD682924A5DDE300668714 /* GitHubAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD682D24A5DDE300668714 /* GitHubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITests.swift; sourceTree = "<group>"; };
 		4AFD682F24A5DDE300668714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AFD684124A5E8E600668714 /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
+		4AFD684324A5E93A00668714 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		4AFD684824A5EC8300668714 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		4AFD684A24A5ED5600668714 /* SplashScreenComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +107,12 @@
 		4AFD680A24A5DDDC00668714 /* GitHubApp */ = {
 			isa = PBXGroup;
 			children = (
-				4AFD680B24A5DDDC00668714 /* AppDelegate.swift */,
-				4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */,
+				4AFD683D24A5DF0200668714 /* SupportingFiles */,
+				4AFD683C24A5DEF800668714 /* Resources */,
+				4AFD683B24A5DEF000668714 /* App */,
 				4AFD680F24A5DDDC00668714 /* ViewController.swift */,
 				4AFD681124A5DDDC00668714 /* Main.storyboard */,
-				4AFD681424A5DDE300668714 /* Assets.xcassets */,
 				4AFD681624A5DDE300668714 /* LaunchScreen.storyboard */,
-				4AFD681924A5DDE300668714 /* Info.plist */,
 			);
 			path = GitHubApp;
 			sourceTree = "<group>";
@@ -126,6 +133,59 @@
 				4AFD682F24A5DDE300668714 /* Info.plist */,
 			);
 			path = GitHubAppUITests;
+			sourceTree = "<group>";
+		};
+		4AFD683B24A5DEF000668714 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD683F24A5E33200668714 /* Coordinator */,
+				4AFD683E24A5E24800668714 /* Screens */,
+				4AFD680B24A5DDDC00668714 /* AppDelegate.swift */,
+				4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4AFD683C24A5DEF800668714 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD681424A5DDE300668714 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4AFD683D24A5DF0200668714 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD681924A5DDE300668714 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4AFD683E24A5E24800668714 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD684524A5EB3500668714 /* SplashScreen */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		4AFD683F24A5E33200668714 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD684124A5E8E600668714 /* CoordinatorType.swift */,
+				4AFD684324A5E93A00668714 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4AFD684524A5EB3500668714 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD684824A5EC8300668714 /* SplashScreenViewController.swift */,
+				4AFD684A24A5ED5600668714 /* SplashScreenComposer.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +321,10 @@
 			files = (
 				4AFD681024A5DDDC00668714 /* ViewController.swift in Sources */,
 				4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */,
+				4AFD684924A5EC8400668714 /* SplashScreenViewController.swift in Sources */,
+				4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */,
+				4AFD684424A5E93A00668714 /* MainCoordinator.swift in Sources */,
+				4AFD684B24A5ED5600668714 /* SplashScreenComposer.swift in Sources */,
 				4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DNZ5Z4EKKR;
-				INFOPLIST_FILE = GitHubApp/Info.plist;
+				INFOPLIST_FILE = GitHubApp/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +518,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DNZ5Z4EKKR;
-				INFOPLIST_FILE = GitHubApp/Info.plist;
+				INFOPLIST_FILE = GitHubApp/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
