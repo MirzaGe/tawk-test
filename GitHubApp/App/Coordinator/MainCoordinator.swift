@@ -21,11 +21,22 @@ class MainCoordinator: CoordinatorType {
     // MARK: - Screens
     lazy var usersVc: UsersViewController = {
         let vc = UsersScreenComposer.composeWith()
+        vc.coordinator = self
         return vc
     }()
     
     func start() {
         
+    }
+    
+}
+
+extension MainCoordinator: UsersViewControllerRoute {
+    
+    func routeToUserDetail(_ vc: UsersViewController) {
+        let vc = UserDetailComposer.composeWith()
+        
+        self.navigationVc.pushViewController(vc, animated: true)
     }
     
 }

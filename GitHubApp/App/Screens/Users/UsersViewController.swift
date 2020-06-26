@@ -10,10 +10,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol UsersViewControllerRoute {
+    func routeToUserDetail(_ vc: UsersViewController)
+}
+
 class UsersViewController: UIViewController {
 
     // MARK: - Properties
     var viewModel: UsersViewModelInputs?
+    var coordinator: UsersViewControllerRoute?
+    
     private var userDatasource: UserTableDataSource?
     private let disposeBag = DisposeBag()
     
