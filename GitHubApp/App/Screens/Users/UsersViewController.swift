@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 protocol UsersViewControllerRoute {
-    func routeToUserDetail(_ vc: UsersViewController)
+    func routeToUserDetail(_ vc: UsersViewController, data: UserFormatter)
 }
 
 class UsersViewController: UIViewController {
@@ -119,6 +119,7 @@ class UsersViewController: UIViewController {
         tableView.dataSource = userDatasource
         tableView.delegate = userDatasource
         
+        // data source events
         userDatasource?.loadMore
             .asDriver()
             .drive(onNext: { [unowned self] in
@@ -126,6 +127,14 @@ class UsersViewController: UIViewController {
             })
             .disposed(by: self.disposeBag)
         
+        userDatasource?.cellClicked
+            .asDriver()
+            .drive(onNext: { [unowned self] (data) in
+                self.coordinator?.routeToUserDetail(self, data: data)
+            })
+            .disposed(by: self.disposeBag)
+        
+        // refresh control events
         tableView.refreshControl = self.refreshControl
         
         self.refreshControl.rx.controlEvent(.valueChanged)

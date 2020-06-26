@@ -12,6 +12,7 @@ import RxCocoa
 
 protocol UserTableDataSourceEvents {
     var loadMore: ControlEvent<Void> { get }
+    var cellClicked: ControlEvent<UserFormatter> { get }
 }
 
 final class UserTableDataSource: NSObject, UserTableDataSourceEvents {
@@ -40,6 +41,10 @@ final class UserTableDataSource: NSObject, UserTableDataSourceEvents {
         return ControlEvent(events: _loadMore)
     }
     
+    private let _cellClicked: PublishRelay<UserFormatter> = PublishRelay()
+    var cellClicked: ControlEvent<UserFormatter> {
+        return ControlEvent(events: _cellClicked)
+    }
     
     let disposeBag = DisposeBag()
     
@@ -75,6 +80,13 @@ extension UserTableDataSource: UITableViewDataSource, UITableViewDelegate {
             self._loadMore.accept(())
             
         }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let data = self.data.value[indexPath.row]
+        self._cellClicked.accept(data)
         
     }
     
