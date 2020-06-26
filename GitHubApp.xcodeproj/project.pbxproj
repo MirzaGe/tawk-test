@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1B40C724A62D160048FFF3 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B40C624A62D160048FFF3 /* Reusable.swift */; };
+		4A1B40C924A62E0A0048FFF3 /* UserTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */; };
+		4A5A607324A6394C0016D35A /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607224A6394C0016D35A /* PreviewView.swift */; };
 		4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680B24A5DDDC00668714 /* AppDelegate.swift */; };
 		4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */; };
 		4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681424A5DDE300668714 /* Assets.xcassets */; };
@@ -22,6 +25,7 @@
 		4AFD685A24A611BC00668714 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD685924A611BC00668714 /* AppColors.swift */; };
 		4AFD685D24A612F500668714 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD685F24A612F500668714 /* Localizable.strings */; };
 		4AFD686124A6135B00668714 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD686024A6135B00668714 /* AppStrings.swift */; };
+		4AFD686424A6261400668714 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD686324A6261400668714 /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A1B40C624A62D160048FFF3 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableDataSource.swift; sourceTree = "<group>"; };
+		4A5A607224A6394C0016D35A /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		4AFD680824A5DDDC00668714 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD680B24A5DDDC00668714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +70,7 @@
 		4AFD685924A611BC00668714 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		4AFD685E24A612F500668714 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AFD686024A6135B00668714 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
+		4AFD686324A6261400668714 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A1B40C424A62CF80048FFF3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A1B40C524A62D010048FFF3 /* Protocols */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4A1B40C524A62D010048FFF3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4A1B40C624A62D160048FFF3 /* Reusable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		4AFD67FF24A5DDDC00668714 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +140,7 @@
 				4AFD683B24A5DEF000668714 /* App */,
 				4AFD683C24A5DEF800668714 /* Resources */,
 				4AFD683D24A5DF0200668714 /* SupportingFiles */,
+				4A1B40C424A62CF80048FFF3 /* Utils */,
 			);
 			path = GitHubApp;
 			sourceTree = "<group>";
@@ -148,6 +173,7 @@
 				4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */,
 				4AFD685924A611BC00668714 /* AppColors.swift */,
 				4AFD686024A6135B00668714 /* AppStrings.swift */,
+				4A5A607224A6394C0016D35A /* PreviewView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -191,6 +217,7 @@
 		4AFD684C24A5F52400668714 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				4AFD686224A6242B00668714 /* UserTable */,
 				4AFD684D24A5F53A00668714 /* UsersViewController.swift */,
 				4AFD684F24A5F60800668714 /* UsersScreenComposer.swift */,
 			);
@@ -211,6 +238,15 @@
 				4AFD685324A607B000668714 /* AppManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		4AFD686224A6242B00668714 /* UserTable */ = {
+			isa = PBXGroup;
+			children = (
+				4AFD686324A6261400668714 /* UserTableViewCell.swift */,
+				4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */,
+			);
+			path = UserTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,10 +381,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A5A607324A6394C0016D35A /* PreviewView.swift in Sources */,
 				4AFD686124A6135B00668714 /* AppStrings.swift in Sources */,
 				4AFD685424A607B000668714 /* AppManager.swift in Sources */,
+				4A1B40C924A62E0A0048FFF3 /* UserTableDataSource.swift in Sources */,
 				4AFD684E24A5F53A00668714 /* UsersViewController.swift in Sources */,
+				4A1B40C724A62D160048FFF3 /* Reusable.swift in Sources */,
 				4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */,
+				4AFD686424A6261400668714 /* UserTableViewCell.swift in Sources */,
 				4AFD685024A5F60800668714 /* UsersScreenComposer.swift in Sources */,
 				4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */,
 				4AFD685A24A611BC00668714 /* AppColors.swift in Sources */,
