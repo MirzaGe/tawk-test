@@ -14,6 +14,7 @@ import RxCocoa
 protocol UsersViewModelInputs {
     func outputs() -> UsersViewModelOutputs
     func getUsers()
+    func searchUser(key: String)
 }
 
 protocol UsersViewModelOutputs {
@@ -32,7 +33,8 @@ class UsersViewModel: UsersViewModelOutputs {
  
     // MARK: - Data properties
     private var _sinceUserId: Int = 0
-    private var _users: [User] = []
+    private var _users: [UserFormatter] = []
+    private var _filteredUsers: [UserFormatter] = []
     
 }
 
@@ -54,12 +56,29 @@ extension UsersViewModel: UsersViewModelInputs {
             
             switch result {
             case .success(let users):
-                self._users.append(contentsOf: users)
-                self.users.accept(self._users.map { UserFormatter(user: $0) } )
+                self._users.append(contentsOf: users.map { UserFormatter(user: $0) })
+                self.users.accept(self._users)
             case .failure(let error):
                 print("error: \(error.localizedDescription)")
             }
             
+        }
+        
+    }
+    
+    func searchUser(key: String) {
+        
+        if !key.isEmpty {
+            self._filteredUsers = self._users.filter { (user) -> Bool in
+                let usernameMatch = user.getUsername().lowercased().contains(key.lowercased())
+                // note match
+                
+                return usernameMatch
+            }
+            
+            self.users.accept(_filteredUsers)
+        } else {
+            self.users.accept(_users)
         }
         
     }

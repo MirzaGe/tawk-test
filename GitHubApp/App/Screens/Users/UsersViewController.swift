@@ -65,8 +65,15 @@ class UsersViewController: UIViewController {
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         
+        configureSearchBar()
         configureTableView()
         
+    }
+    
+    private func configureSearchBar() {
+        
+        self.searchBar.searchResultsUpdater = self
+    
     }
     
     private func configureTableView() {
@@ -90,6 +97,16 @@ class UsersViewController: UIViewController {
                 self.userDatasource?.data.accept(data)
             })
             .disposed(by: self.disposeBag)
+        
+    }
+
+}
+
+extension UsersViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        self.viewModel?.searchUser(key: searchController.searchBar.text!)
         
     }
 
