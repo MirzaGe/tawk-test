@@ -14,11 +14,13 @@ import RxCocoa
 protocol UsersViewModelInputs {
     func outputs() -> UsersViewModelOutputs
     func getUsers()
+    func loadMoreUsers()
     func searchUser(key: String)
 }
 
 protocol UsersViewModelOutputs {
     var users: BehaviorRelay<[UserFormatter]> { get }
+    var isLoadingMoreUsers: BehaviorRelay<Bool> { get }
 }
 
 class UsersViewModel: UsersViewModelOutputs {
@@ -30,6 +32,7 @@ class UsersViewModel: UsersViewModelOutputs {
     }
     
     let users: BehaviorRelay<[UserFormatter]> = BehaviorRelay(value: [])
+    let isLoadingMoreUsers: BehaviorRelay<Bool> = BehaviorRelay(value: false)
  
     // MARK: - Data properties
     private var _sinceUserId: Int = 0
@@ -49,15 +52,34 @@ extension UsersViewModel: UsersViewModelInputs {
         self._sinceUserId = 0
         self._users.removeAll()
         
-        let params = GetUsersParameters(since: _sinceUserId)
+        self.getUsers(since: self._sinceUserId)
+        
+    }
+    
+    func loadMoreUsers() {
+        
+        self.getUsers(since: self._sinceUserId)
+        
+    }
+    
+    private func getUsers(since: Int) {
+        
+        let params = GetUsersParameters(since: since)
         
         self.getUsersUseCase.getUsers(params: params) { [weak self] (result) in
             guard let self = self else { return }
             
             switch result {
             case .success(let users):
+                
+                if let lastUser = users.last {
+                    self._sinceUserId = lastUser.id
+                }
+                
                 self._users.append(contentsOf: users.map { UserFormatter(user: $0) })
                 self.users.accept(self._users)
+                self.isLoadingMoreUsers.accept(false)
+            
             case .failure(let error):
                 print("error: \(error.localizedDescription)")
             }

@@ -10,7 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class UserTableDataSource: NSObject {
+protocol UserTableDataSourceEvents {
+    var loadMore: ControlEvent<Void> { get }
+}
+
+final class UserTableDataSource: NSObject, UserTableDataSourceEvents {
     
     typealias Data = UserFormatter
     typealias Cell = UserTableViewCell
@@ -30,6 +34,12 @@ final class UserTableDataSource: NSObject {
             })
             .disposed(by: self.disposeBag)
     }
+    
+    private let _loadMore: PublishRelay<Void> = PublishRelay()
+    var loadMore: ControlEvent<Void> {
+        return ControlEvent(events: _loadMore)
+    }
+    
     
     let disposeBag = DisposeBag()
     
@@ -52,6 +62,20 @@ extension UserTableDataSource: UITableViewDataSource, UITableViewDelegate {
         cell.configure(data: data.value[indexPath.row], isInverted: isInverted)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == (self.data.value.count - 1) {
+            let spinner = UIActivityIndicatorView(style: .medium)
+            spinner.startAnimating()
+            spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))
+            tableView.tableFooterView = spinner
+            
+            self._loadMore.accept(())
+            
+        }
+        
     }
     
 }

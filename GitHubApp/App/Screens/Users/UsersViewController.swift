@@ -85,6 +85,13 @@ class UsersViewController: UIViewController {
         tableView.dataSource = userDatasource
         tableView.delegate = userDatasource
         
+        userDatasource?.loadMore
+            .asDriver()
+            .drive(onNext: { [unowned self] in
+                self.viewModel?.loadMoreUsers()
+            })
+            .disposed(by: self.disposeBag)
+        
     }
     
     private func bindViewModel() {
@@ -95,6 +102,18 @@ class UsersViewController: UIViewController {
             .asDriver()
             .drive(onNext: { [unowned self] (data) in
                 self.userDatasource?.data.accept(data)
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.viewModel?
+        .outputs()
+            .isLoadingMoreUsers
+            .asDriver()
+            .filter({ $0 == false })
+            .drive(onNext: { [unowned self] (data) in
+                if !data {
+                    self.tableView.tableFooterView = nil
+                }
             })
             .disposed(by: self.disposeBag)
         
