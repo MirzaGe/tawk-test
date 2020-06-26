@@ -26,7 +26,6 @@ class UserTableViewCell: UITableViewCell {
     private lazy var userImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = #imageLiteral(resourceName: "ic-github")
         return image
     }()
     
@@ -97,6 +96,8 @@ class UserTableViewCell: UITableViewCell {
             userImage.heightAnchor.constraint(equalToConstant: 60)
         ])
         
+        userImage.setRadius(radius: 30)
+        
         detailsStackView.addArrangedSubview(usernameLabel)
         detailsStackView.addArrangedSubview(urlLabel)
         containerStackView.addArrangedSubview(detailsStackView)
@@ -116,6 +117,9 @@ class UserTableViewCell: UITableViewCell {
     }
     
     func configure(data: UserFormatter, isInverted: Bool) {
+        
+        userImage.shimmer()
+        
         self.usernameLabel.text = data.getUsername()
         self.urlLabel.text = data.getProfileUrl()
         
@@ -128,6 +132,8 @@ class UserTableViewCell: UITableViewCell {
     }
     
     private func setAvatar(image: UIImage?, isInverted: Bool) {
+        
+        userImage.removeShimmer()
         
         if isInverted,
             let filter = CIFilter(name: "CIColorInvert"),
