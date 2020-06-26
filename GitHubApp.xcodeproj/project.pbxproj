@@ -29,6 +29,7 @@
 		4A76043B24A6758600342D56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76043A24A6758600342D56 /* ImageLoader.swift */; };
 		4A76043D24A67A2700342D56 /* UIView+shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76043C24A67A2700342D56 /* UIView+shimmer.swift */; };
 		4A76043F24A67B2700342D56 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76043E24A67B2700342D56 /* UIView+.swift */; };
+		4A76044124A6A74F00342D56 /* UsersShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76044024A6A74F00342D56 /* UsersShimmerView.swift */; };
 		4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680B24A5DDDC00668714 /* AppDelegate.swift */; };
 		4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */; };
 		4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681424A5DDE300668714 /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		4A76043A24A6758600342D56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		4A76043C24A67A2700342D56 /* UIView+shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+shimmer.swift"; sourceTree = "<group>"; };
 		4A76043E24A67B2700342D56 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		4A76044024A6A74F00342D56 /* UsersShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersShimmerView.swift; sourceTree = "<group>"; };
 		4AFD680824A5DDDC00668714 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD680B24A5DDDC00668714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				4AFD684D24A5F53A00668714 /* UsersViewController.swift */,
 				4AFD684F24A5F60800668714 /* UsersScreenComposer.swift */,
 				4A5A609724A65AFA0016D35A /* UsersViewModel.swift */,
+				4A76044024A6A74F00342D56 /* UsersShimmerView.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				4A76043F24A67B2700342D56 /* UIView+.swift in Sources */,
 				4AFD685024A5F60800668714 /* UsersScreenComposer.swift in Sources */,
 				4A5A608624A64ADA0016D35A /* ApiClient.swift in Sources */,
+				4A76044124A6A74F00342D56 /* UsersShimmerView.swift in Sources */,
 				4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */,
 				4A5A607A24A645690016D35A /* GetUsersUseCase.swift in Sources */,
 				4A5A609624A6582A0016D35A /* UserGateway.swift in Sources */,

@@ -20,7 +20,7 @@ protocol UsersViewModelInputs {
 
 protocol UsersViewModelOutputs {
     var users: BehaviorRelay<[UserFormatter]> { get }
-    var isLoadingMoreUsers: BehaviorRelay<Bool> { get }
+    var isLoadingMoreUsers: PublishRelay<Bool> { get }
 }
 
 class UsersViewModel: UsersViewModelOutputs {
@@ -32,7 +32,7 @@ class UsersViewModel: UsersViewModelOutputs {
     }
     
     let users: BehaviorRelay<[UserFormatter]> = BehaviorRelay(value: [])
-    let isLoadingMoreUsers: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+    let isLoadingMoreUsers: PublishRelay<Bool> = PublishRelay()
  
     // MARK: - Data properties
     private var _sinceUserId: Int = 0

@@ -33,6 +33,20 @@ import SwiftUI
 //    
 //    
 //}
+
+struct UserShimmerRepresentable: UIViewRepresentable {
+
+    func makeUIView(context: Context) -> UIView {
+        UsersShimmerView()
+    }
+    func updateUIView(_ view: UIView, context: Context) {
+        //do your logic here
+    }
+
+
+}
+
+
 //
 //@available(iOS 13.0, *)
 //struct UsersView_Preview: PreviewProvider {
@@ -47,5 +61,12 @@ import SwiftUI
 //        UserCellRepresentable()
 //    }
 //}
+
+@available(iOS 13.0, *)
+struct UserShimmer_Preview: PreviewProvider {
+    static var previews: some View {
+        UserShimmerRepresentable()
+    }
+}
 #endif
 

@@ -34,6 +34,8 @@ class UsersViewController: UIViewController {
         return refreshControl
     }()
     
+    private var usersShimmerView: UsersShimmerView?
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,12 @@ class UsersViewController: UIViewController {
         super.loadView()
         
         viewModel?.getUsers()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.usersShimmerView?.startShimmer()
     }
     
     private func setupViews() {
@@ -67,6 +75,22 @@ class UsersViewController: UIViewController {
             self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
+        
+        // shimmer
+        let shimmerView = UsersShimmerView()
+        shimmerView.backgroundColor = AppColors.backgroundColor.value
+        shimmerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.usersShimmerView = shimmerView
+        
+        self.view.addSubview(self.usersShimmerView!)
+        
+        NSLayoutConstraint.activate([
+            self.usersShimmerView!.topAnchor.constraint(equalTo: self.tableView.topAnchor, constant: 190),
+            self.usersShimmerView!.leadingAnchor.constraint(equalTo: self.tableView.leadingAnchor),
+            self.usersShimmerView!.trailingAnchor.constraint(equalTo: self.tableView.trailingAnchor),
+            self.usersShimmerView!.bottomAnchor.constraint(equalTo: self.tableView.bottomAnchor)
         ])
         
         configureSearchBar()
@@ -135,11 +159,14 @@ class UsersViewController: UIViewController {
         self.viewModel?
         .outputs()
             .isLoadingMoreUsers
-            .asDriver()
+            .asObservable()
             .filter({ $0 == false })
-            .drive(onNext: { [unowned self] (data) in
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] (data) in
                 if !data {
                     self.tableView.tableFooterView = nil
+                    self.usersShimmerView?.removeFromSuperview()
+                    self.usersShimmerView = nil
                 }
             })
             .disposed(by: self.disposeBag)
