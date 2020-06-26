@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class UsersViewController: UIViewController {
 
     // MARK: - Properties
+    var viewModel: UsersViewModelInputs?
     private var userDatasource: UserTableDataSource?
+    private let disposeBag = DisposeBag()
     
     // MARK: - UI Properties
     private lazy var searchBar: UISearchController = {
@@ -31,6 +35,14 @@ class UsersViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        bindViewModel()
+        
+    }
+    
+    override func loadView() {
+        super.loadView()
+        
+        viewModel?.getUsers()
     }
     
     private func setupViews() {
@@ -65,6 +77,19 @@ class UsersViewController: UIViewController {
         
         tableView.dataSource = userDatasource
         tableView.delegate = userDatasource
+        
+    }
+    
+    private func bindViewModel() {
+        
+        self.viewModel?
+            .outputs()
+            .users
+            .asDriver()
+            .drive(onNext: { [unowned self] (data) in
+                self.userDatasource?.data.accept(data)
+            })
+            .disposed(by: self.disposeBag)
         
     }
 

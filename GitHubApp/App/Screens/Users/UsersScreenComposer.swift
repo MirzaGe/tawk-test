@@ -7,3 +7,25 @@
 //
 
 import Foundation
+
+final class UsersScreenComposer {
+    
+    private init() {}
+    
+    static func composeWith() -> UsersViewController {
+        
+        let apiLogger = ApiLogger()
+        let apiClient = ApiClientImpl(config: .default, logger: apiLogger)
+        let apiGateway = ApiUserGatewayImpl(apiClient: apiClient)
+        
+        let getUsersUseCase = GetUsersUseCaseImpl(gateway: apiGateway)
+        
+        let vm = UsersViewModel(getUsersUseCase: getUsersUseCase)
+        
+        let vc = UsersViewController()
+        vc.viewModel = vm
+        
+        return vc
+    }
+    
+}

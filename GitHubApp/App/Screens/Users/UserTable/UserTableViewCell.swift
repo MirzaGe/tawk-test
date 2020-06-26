@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Combine
 
 class UserTableViewCell: UITableViewCell {
+    
+    // MARK: Properties
+    private var imageRequest: AnyCancellable?
 
     // MARK: - UI Properties
     private lazy var containerStackView: UIStackView = {
@@ -36,7 +40,7 @@ class UserTableViewCell: UITableViewCell {
     
     private lazy var usernameLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.font = .boldSystemFont(ofSize: 16)
         label.text = "Test"
         return label
@@ -44,7 +48,7 @@ class UserTableViewCell: UITableViewCell {
     
     private lazy var urlLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.font = .systemFont(ofSize: 16)
         label.text = "Test"
         return label
@@ -52,7 +56,7 @@ class UserTableViewCell: UITableViewCell {
     
     private lazy var notesImage: UIImageView = {
         let image = UIImageView()
-        image.image = #imageLiteral(resourceName: "ic-github")
+        image.image = #imageLiteral(resourceName: "ic-pen")
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -67,6 +71,13 @@ class UserTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        userImage.image = nil
+        self.imageRequest?.cancel()
     }
     
     private func setupViews() {
@@ -95,10 +106,40 @@ class UserTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             notesImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             notesImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            notesImage.widthAnchor.constraint(equalToConstant: 25),
-            notesImage.heightAnchor.constraint(equalToConstant: 25)
+            notesImage.widthAnchor.constraint(equalToConstant: 20),
+            notesImage.heightAnchor.constraint(equalToConstant: 20),
+            containerStackView.trailingAnchor.constraint(equalTo: notesImage.leadingAnchor, constant: -8)
         ])
         
+        notesImage.isHidden = true
+        
+    }
+    
+    func configure(data: UserFormatter, isInverted: Bool) {
+        self.usernameLabel.text = data.getUsername()
+        self.urlLabel.text = data.getProfileUrl()
+        
+        if let url = URL(string: data.getAvatarUrl()) {
+            self.imageRequest = ImageLoader.shared.loadImage(from: url).sink { [unowned self] (image) in
+                self.setAvatar(image: image, isInverted: isInverted)
+            }
+        }
+        
+    }
+    
+    private func setAvatar(image: UIImage?, isInverted: Bool) {
+        
+        if isInverted,
+            let filter = CIFilter(name: "CIColorInvert"),
+                let image = image,
+                let ciimage = CIImage(image: image) {
+            
+                filter.setValue(ciimage, forKey: kCIInputImageKey)
+                let newImage = UIImage(ciImage: filter.outputImage!)
+                self.userImage.image = newImage
+        } else {
+            userImage.image = image
+        }
     }
 
 }

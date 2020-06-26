@@ -16,7 +16,7 @@ protocol ApiClient {
     func execute<T>(request: ApiRequest, completionHandler: @escaping (_ result: Result<ApiResponse<T>, Error>) -> Void) where T : Decodable
 }
 
-class ApiClientImplementation: ApiClient {
+class ApiClientImpl: ApiClient {
     
     let urlSession: URLSession
     let apiLogger: ApiLoggerable?
@@ -28,7 +28,12 @@ class ApiClientImplementation: ApiClient {
     
     func execute<T>(request: ApiRequest, completionHandler: @escaping (Result<ApiResponse<T>, Error>) -> Void) where T : Decodable {
         
+        self.apiLogger?.log(request: request.urlRequest)
+        
         let dataTask = self.urlSession.dataTask(with: request.urlRequest) { (data, response, error) in
+            
+             self.apiLogger?.log(data: data, response: response as? HTTPURLResponse, error: error)
+            
             guard let httpUrlResponse = response as? HTTPURLResponse else {
                 completionHandler(.failure(NetworkRequestError(error: error)))
                 return

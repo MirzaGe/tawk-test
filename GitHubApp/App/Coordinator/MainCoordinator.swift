@@ -20,7 +20,7 @@ class MainCoordinator: CoordinatorType {
     
     // MARK: - Screens
     lazy var usersVc: UsersViewController = {
-        let vc = UsersViewController()
+        let vc = UsersScreenComposer.composeWith()
         return vc
     }()
     

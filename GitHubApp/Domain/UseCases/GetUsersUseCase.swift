@@ -10,7 +10,7 @@ import Foundation
 
 typealias GetUsersUseCaseCompletionHandler = (_ users: Result<[User], Error>) -> Void
 
-protocol GetUserUseCase {
+protocol GetUsersUseCase {
     func getUsers(params: GetUsersParameters, completionHandler: @escaping GetUsersUseCaseCompletionHandler)
 }
 
@@ -18,7 +18,7 @@ struct GetUsersParameters {
     let since: Int
 }
 
-class GetUsersUseCaseImpl: GetUserUseCase {
+class GetUsersUseCaseImpl: GetUsersUseCase {
     
     let gateway: UsersGateway
     
@@ -27,7 +27,7 @@ class GetUsersUseCaseImpl: GetUserUseCase {
     }
     
     func getUsers(params: GetUsersParameters, completionHandler: @escaping GetUsersUseCaseCompletionHandler) {
-        self.gateway.getUsers { (result) in
+        self.gateway.getUsers(params: params) { (result) in
             completionHandler(result)
         }
     }

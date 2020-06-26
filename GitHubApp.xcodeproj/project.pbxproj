@@ -23,6 +23,10 @@
 		4A5A609224A653C90016D35A /* GetUsersApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609124A653C90016D35A /* GetUsersApiRequest.swift */; };
 		4A5A609424A654790016D35A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609324A654790016D35A /* HTTPMethod.swift */; };
 		4A5A609624A6582A0016D35A /* UserGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609524A6582A0016D35A /* UserGateway.swift */; };
+		4A5A609824A65AFA0016D35A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609724A65AFA0016D35A /* UsersViewModel.swift */; };
+		4A5A609B24A6601C0016D35A /* UserFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609A24A6601C0016D35A /* UserFormatter.swift */; };
+		4A76043924A6746800342D56 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76043824A6746800342D56 /* ImageCache.swift */; };
+		4A76043B24A6758600342D56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76043A24A6758600342D56 /* ImageLoader.swift */; };
 		4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680B24A5DDDC00668714 /* AppDelegate.swift */; };
 		4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */; };
 		4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681424A5DDE300668714 /* Assets.xcassets */; };
@@ -78,6 +82,10 @@
 		4A5A609124A653C90016D35A /* GetUsersApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersApiRequest.swift; sourceTree = "<group>"; };
 		4A5A609324A654790016D35A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		4A5A609524A6582A0016D35A /* UserGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGateway.swift; sourceTree = "<group>"; };
+		4A5A609724A65AFA0016D35A /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		4A5A609A24A6601C0016D35A /* UserFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormatter.swift; sourceTree = "<group>"; };
+		4A76043824A6746800342D56 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		4A76043A24A6758600342D56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		4AFD680824A5DDDC00668714 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD680B24A5DDDC00668714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 		4A1B40C424A62CF80048FFF3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4A76043624A6745000342D56 /* Service */,
 				4A5A608924A64E860016D35A /* Extension */,
 				4A1B40C524A62D010048FFF3 /* Protocols */,
 			);
@@ -253,6 +262,31 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		4A5A609924A6600E0016D35A /* DataFormatters */ = {
+			isa = PBXGroup;
+			children = (
+				4A5A609A24A6601C0016D35A /* UserFormatter.swift */,
+			);
+			path = DataFormatters;
+			sourceTree = "<group>";
+		};
+		4A76043624A6745000342D56 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4A76043724A6745500342D56 /* ImageLoader */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4A76043724A6745500342D56 /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				4A76043824A6746800342D56 /* ImageCache.swift */,
+				4A76043A24A6758600342D56 /* ImageLoader.swift */,
+			);
+			path = ImageLoader;
+			sourceTree = "<group>";
+		};
 		4AFD67FF24A5DDDC00668714 = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +343,7 @@
 		4AFD683B24A5DEF000668714 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4A5A609924A6600E0016D35A /* DataFormatters */,
 				4AFD685224A607A500668714 /* Managers */,
 				4AFD683F24A5E33200668714 /* Coordinator */,
 				4AFD683E24A5E24800668714 /* Screens */,
@@ -363,6 +398,7 @@
 				4AFD686224A6242B00668714 /* UserTable */,
 				4AFD684D24A5F53A00668714 /* UsersViewController.swift */,
 				4AFD684F24A5F60800668714 /* UsersScreenComposer.swift */,
+				4A5A609724A65AFA0016D35A /* UsersViewModel.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -628,7 +664,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A5A607324A6394C0016D35A /* PreviewView.swift in Sources */,
+				4A5A609824A65AFA0016D35A /* UsersViewModel.swift in Sources */,
 				4AFD686124A6135B00668714 /* AppStrings.swift in Sources */,
+				4A76043B24A6758600342D56 /* ImageLoader.swift in Sources */,
 				4A5A609224A653C90016D35A /* GetUsersApiRequest.swift in Sources */,
 				4AFD685424A607B000668714 /* AppManager.swift in Sources */,
 				4A1B40C924A62E0A0048FFF3 /* UserTableDataSource.swift in Sources */,
@@ -651,6 +689,8 @@
 				4A5A609424A654790016D35A /* HTTPMethod.swift in Sources */,
 				4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */,
 				4A5A608F24A64FAA0016D35A /* ApiLogger.swift in Sources */,
+				4A5A609B24A6601C0016D35A /* UserFormatter.swift in Sources */,
+				4A76043924A6746800342D56 /* ImageCache.swift in Sources */,
 				4A5A608324A649210016D35A /* ApiUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -832,6 +872,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnroque.GitHubApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
