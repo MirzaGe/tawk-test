@@ -25,9 +25,13 @@ class UsersViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-//        tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
+    }()
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        return refreshControl
     }()
     
     // MARK: - Lifecycle
@@ -89,6 +93,29 @@ class UsersViewController: UIViewController {
             .asDriver()
             .drive(onNext: { [unowned self] in
                 self.viewModel?.loadMoreUsers()
+            })
+            .disposed(by: self.disposeBag)
+        
+        tableView.refreshControl = self.refreshControl
+        
+        self.refreshControl.rx.controlEvent(.valueChanged)
+            .map { [unowned self] _ in
+                self.refreshControl.isRefreshing == false
+            }
+            .filter { $0 == false }
+            .subscribe(onNext: { [unowned self] _ in
+                self.viewModel?.getUsers()
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.refreshControl.rx.controlEvent(.valueChanged)
+            .map { _ in
+                self.refreshControl.isRefreshing == true
+            }
+            .filter { $0 == true }
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] _ in
+                self.refreshControl.endRefreshing()
             })
             .disposed(by: self.disposeBag)
         
