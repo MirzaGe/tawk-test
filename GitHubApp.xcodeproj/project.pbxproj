@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,17 @@
 		4A1B40C924A62E0A0048FFF3 /* UserTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */; };
 		4A5A607324A6394C0016D35A /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607224A6394C0016D35A /* PreviewView.swift */; };
 		4A5A607724A63F050016D35A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607624A63F050016D35A /* User.swift */; };
+		4A5A607A24A645690016D35A /* GetUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607924A645690016D35A /* GetUsersUseCase.swift */; };
+		4A5A607D24A6461F0016D35A /* GetUsersGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607C24A6461F0016D35A /* GetUsersGateway.swift */; };
+		4A5A608324A649210016D35A /* ApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A608224A649210016D35A /* ApiUser.swift */; };
+		4A5A608624A64ADA0016D35A /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A608524A64ADA0016D35A /* ApiClient.swift */; };
+		4A5A608824A64C750016D35A /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A608724A64C750016D35A /* ApiResponse.swift */; };
+		4A5A608B24A64E9D0016D35A /* JSONDecoder+snakeToCamelCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A608A24A64E9D0016D35A /* JSONDecoder+snakeToCamelCase.swift */; };
+		4A5A608D24A64EE50016D35A /* JSONEncoder+camelToSnakeCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A608C24A64EE50016D35A /* JSONEncoder+camelToSnakeCase.swift */; };
+		4A5A608F24A64FAA0016D35A /* ApiLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A608E24A64FAA0016D35A /* ApiLogger.swift */; };
+		4A5A609224A653C90016D35A /* GetUsersApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609124A653C90016D35A /* GetUsersApiRequest.swift */; };
+		4A5A609424A654790016D35A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609324A654790016D35A /* HTTPMethod.swift */; };
+		4A5A609624A6582A0016D35A /* UserGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609524A6582A0016D35A /* UserGateway.swift */; };
 		4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680B24A5DDDC00668714 /* AppDelegate.swift */; };
 		4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */; };
 		4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681424A5DDE300668714 /* Assets.xcassets */; };
@@ -56,6 +67,17 @@
 		4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableDataSource.swift; sourceTree = "<group>"; };
 		4A5A607224A6394C0016D35A /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		4A5A607624A63F050016D35A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4A5A607924A645690016D35A /* GetUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCase.swift; sourceTree = "<group>"; };
+		4A5A607C24A6461F0016D35A /* GetUsersGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersGateway.swift; sourceTree = "<group>"; };
+		4A5A608224A649210016D35A /* ApiUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUser.swift; sourceTree = "<group>"; };
+		4A5A608524A64ADA0016D35A /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		4A5A608724A64C750016D35A /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		4A5A608A24A64E9D0016D35A /* JSONDecoder+snakeToCamelCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+snakeToCamelCase.swift"; sourceTree = "<group>"; };
+		4A5A608C24A64EE50016D35A /* JSONEncoder+camelToSnakeCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+camelToSnakeCase.swift"; sourceTree = "<group>"; };
+		4A5A608E24A64FAA0016D35A /* ApiLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogger.swift; sourceTree = "<group>"; };
+		4A5A609124A653C90016D35A /* GetUsersApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersApiRequest.swift; sourceTree = "<group>"; };
+		4A5A609324A654790016D35A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		4A5A609524A6582A0016D35A /* UserGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGateway.swift; sourceTree = "<group>"; };
 		4AFD680824A5DDDC00668714 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD680B24A5DDDC00668714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +150,7 @@
 		4A1B40C424A62CF80048FFF3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4A5A608924A64E860016D35A /* Extension */,
 				4A1B40C524A62D010048FFF3 /* Protocols */,
 			);
 			path = Utils;
@@ -144,8 +167,9 @@
 		4A5A607424A63C7F0016D35A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				4A5A607824A643CA0016D35A /* UseCases */,
 				4A5A607524A63EAF0016D35A /* Entities */,
+				4A5A607B24A645D50016D35A /* Gateways */,
+				4A5A607824A643CA0016D35A /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -161,8 +185,72 @@
 		4A5A607824A643CA0016D35A /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				4A5A607924A645690016D35A /* GetUsersUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		4A5A607B24A645D50016D35A /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				4A5A607C24A6461F0016D35A /* GetUsersGateway.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		4A5A607E24A647FB0016D35A /* EntityGateway */ = {
+			isa = PBXGroup;
+			children = (
+				4A5A608024A648DA0016D35A /* Api */,
+			);
+			path = EntityGateway;
+			sourceTree = "<group>";
+		};
+		4A5A608024A648DA0016D35A /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4A5A608424A649DF0016D35A /* Gateways */,
+				4A5A608124A648E60016D35A /* Entities */,
+				4A5A609024A653B40016D35A /* Requests */,
+				4A5A608524A64ADA0016D35A /* ApiClient.swift */,
+				4A5A608724A64C750016D35A /* ApiResponse.swift */,
+				4A5A608E24A64FAA0016D35A /* ApiLogger.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		4A5A608124A648E60016D35A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4A5A608224A649210016D35A /* ApiUser.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		4A5A608424A649DF0016D35A /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				4A5A609524A6582A0016D35A /* UserGateway.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		4A5A608924A64E860016D35A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4A5A608A24A64E9D0016D35A /* JSONDecoder+snakeToCamelCase.swift */,
+				4A5A608C24A64EE50016D35A /* JSONEncoder+camelToSnakeCase.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4A5A609024A653B40016D35A /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				4A5A609124A653C90016D35A /* GetUsersApiRequest.swift */,
+				4A5A609324A654790016D35A /* HTTPMethod.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		4AFD67FF24A5DDDC00668714 = {
@@ -192,6 +280,7 @@
 			children = (
 				4AFD683B24A5DEF000668714 /* App */,
 				4A5A607424A63C7F0016D35A /* Domain */,
+				4A5A607E24A647FB0016D35A /* EntityGateway */,
 				4AFD683C24A5DEF800668714 /* Resources */,
 				4AFD683D24A5DF0200668714 /* SupportingFiles */,
 				4A1B40C424A62CF80048FFF3 /* Utils */,
@@ -313,7 +402,6 @@
 				76B4B3859C2BF2F95B215984 /* Pods-GitHubAppUITests.debug.xcconfig */,
 				3263E87CA05DEB1419F2E480 /* Pods-GitHubAppUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -541,18 +629,29 @@
 			files = (
 				4A5A607324A6394C0016D35A /* PreviewView.swift in Sources */,
 				4AFD686124A6135B00668714 /* AppStrings.swift in Sources */,
+				4A5A609224A653C90016D35A /* GetUsersApiRequest.swift in Sources */,
 				4AFD685424A607B000668714 /* AppManager.swift in Sources */,
 				4A1B40C924A62E0A0048FFF3 /* UserTableDataSource.swift in Sources */,
+				4A5A607D24A6461F0016D35A /* GetUsersGateway.swift in Sources */,
 				4AFD684E24A5F53A00668714 /* UsersViewController.swift in Sources */,
+				4A5A608D24A64EE50016D35A /* JSONEncoder+camelToSnakeCase.swift in Sources */,
 				4A1B40C724A62D160048FFF3 /* Reusable.swift in Sources */,
 				4A5A607724A63F050016D35A /* User.swift in Sources */,
 				4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */,
 				4AFD686424A6261400668714 /* UserTableViewCell.swift in Sources */,
+				4A5A608824A64C750016D35A /* ApiResponse.swift in Sources */,
 				4AFD685024A5F60800668714 /* UsersScreenComposer.swift in Sources */,
+				4A5A608624A64ADA0016D35A /* ApiClient.swift in Sources */,
 				4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */,
+				4A5A607A24A645690016D35A /* GetUsersUseCase.swift in Sources */,
+				4A5A609624A6582A0016D35A /* UserGateway.swift in Sources */,
+				4A5A608B24A64E9D0016D35A /* JSONDecoder+snakeToCamelCase.swift in Sources */,
 				4AFD685A24A611BC00668714 /* AppColors.swift in Sources */,
 				4AFD684424A5E93A00668714 /* MainCoordinator.swift in Sources */,
+				4A5A609424A654790016D35A /* HTTPMethod.swift in Sources */,
 				4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */,
+				4A5A608F24A64FAA0016D35A /* ApiLogger.swift in Sources */,
+				4A5A608324A649210016D35A /* ApiUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
