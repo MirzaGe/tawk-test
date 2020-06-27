@@ -17,6 +17,7 @@ protocol UserDetailViewModelInputs {
 
 protocol UserDetailViewModelOutputs {
     var user: PublishRelay<UserFormatter> { get }
+    var error: PublishRelay<String> { get }
 }
 
 class UserDetailViewModel: UserDetailViewModelOutputs {
@@ -30,6 +31,7 @@ class UserDetailViewModel: UserDetailViewModelOutputs {
     }
     
     let user: PublishRelay<UserFormatter> = PublishRelay()
+    let error: PublishRelay<String> = PublishRelay()
     
 }
 
@@ -52,7 +54,7 @@ extension UserDetailViewModel: UserDetailViewModelInputs {
                 self._user = UserFormatter(user: user)
                 self.user.accept(self._user)
             case .failure(let error):
-                print("error: \(error.localizedDescription)")
+                self.error.accept(error.localizedDescription)
             }
             
         }

@@ -11,6 +11,8 @@ import Foundation
 enum AppStrings: String {
     
     case usersScreenTitle = "USERS_SCREEN_TITLE"
+    case errorTitle = "ERROR_TITLE"
+    case okTitle = "OK_TITLE"
     
 }
 

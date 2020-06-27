@@ -21,6 +21,7 @@ protocol UsersViewModelInputs {
 protocol UsersViewModelOutputs {
     var users: BehaviorRelay<[UserFormatter]> { get }
     var isLoadingMoreUsers: PublishRelay<Bool> { get }
+    var error: PublishRelay<String> { get }
 }
 
 class UsersViewModel: UsersViewModelOutputs {
@@ -33,6 +34,7 @@ class UsersViewModel: UsersViewModelOutputs {
     
     let users: BehaviorRelay<[UserFormatter]> = BehaviorRelay(value: [])
     let isLoadingMoreUsers: PublishRelay<Bool> = PublishRelay()
+    let error: PublishRelay<String> = PublishRelay()
  
     // MARK: - Data properties
     private var _sinceUserId: Int = 0
@@ -81,7 +83,7 @@ extension UsersViewModel: UsersViewModelInputs {
                 self.isLoadingMoreUsers.accept(false)
             
             case .failure(let error):
-                print("error: \(error.localizedDescription)")
+                self.error.accept("\(error.localizedDescription)")
             }
             
         }

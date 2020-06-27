@@ -40,6 +40,7 @@
 		4A76B41D24A716FA00357EE4 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B41C24A716FA00357EE4 /* UserDetailViewModel.swift */; };
 		4A76B42024A735DC00357EE4 /* UserDetailShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B41F24A735DC00357EE4 /* UserDetailShimmerView.swift */; };
 		4A76B42224A735EF00357EE4 /* UserDetailShimmerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A76B42124A735EF00357EE4 /* UserDetailShimmerView.xib */; };
+		4A76B42524A74C7D00357EE4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B42424A74C7D00357EE4 /* BaseViewController.swift */; };
 		4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680B24A5DDDC00668714 /* AppDelegate.swift */; };
 		4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */; };
 		4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681424A5DDE300668714 /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 		4A76B41C24A716FA00357EE4 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		4A76B41F24A735DC00357EE4 /* UserDetailShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailShimmerView.swift; sourceTree = "<group>"; };
 		4A76B42124A735EF00357EE4 /* UserDetailShimmerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailShimmerView.xib; sourceTree = "<group>"; };
+		4A76B42424A74C7D00357EE4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4AFD680824A5DDDC00668714 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD680B24A5DDDC00668714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		4A1B40C424A62CF80048FFF3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4A76B42324A74C6F00357EE4 /* Base */,
 				4A76043624A6745000342D56 /* Service */,
 				4A5A608924A64E860016D35A /* Extension */,
 				4A1B40C524A62D010048FFF3 /* Protocols */,
@@ -349,6 +352,14 @@
 				4A76B42124A735EF00357EE4 /* UserDetailShimmerView.xib */,
 			);
 			path = ShimmerView;
+			sourceTree = "<group>";
+		};
+		4A76B42324A74C6F00357EE4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4A76B42424A74C7D00357EE4 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		4AFD67FF24A5DDDC00668714 = {
@@ -737,6 +748,7 @@
 				4A76043D24A67A2700342D56 /* UIView+shimmer.swift in Sources */,
 				4A1B40C924A62E0A0048FFF3 /* UserTableDataSource.swift in Sources */,
 				4A5A607D24A6461F0016D35A /* GetUsersGateway.swift in Sources */,
+				4A76B42524A74C7D00357EE4 /* BaseViewController.swift in Sources */,
 				4AFD684E24A5F53A00668714 /* UsersViewController.swift in Sources */,
 				4A5A608D24A64EE50016D35A /* JSONEncoder+camelToSnakeCase.swift in Sources */,
 				4A76B41724A713F500357EE4 /* GetUserUseCase.swift in Sources */,

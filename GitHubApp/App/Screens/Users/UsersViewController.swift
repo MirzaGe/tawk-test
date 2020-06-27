@@ -14,7 +14,7 @@ protocol UsersViewControllerRoute {
     func routeToUserDetail(_ vc: UsersViewController, data: UserFormatter)
 }
 
-class UsersViewController: UIViewController {
+class UsersViewController: BaseViewController {
 
     // MARK: - Properties
     var viewModel: UsersViewModelInputs?
@@ -65,6 +65,7 @@ class UsersViewController: UIViewController {
             self.viewModel?.getUsers()
             hasAppear.toggle()
         }
+        
     }
     
     private func setupViews() {
@@ -176,7 +177,7 @@ class UsersViewController: UIViewController {
             .disposed(by: self.disposeBag)
         
         self.viewModel?
-        .outputs()
+            .outputs()
             .isLoadingMoreUsers
             .asObservable()
             .filter({ $0 == false })
@@ -187,6 +188,17 @@ class UsersViewController: UIViewController {
                     self.usersShimmerView?.removeFromSuperview()
                     self.usersShimmerView = nil
                 }
+            })
+            .disposed(by: self.disposeBag)
+        
+        viewModel?.outputs()
+            .error
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] (message) in
+                self.alert(title: AppStrings.errorTitle.rawValue.getLocalize(),
+                           okayButtonTitle: AppStrings.okTitle.rawValue.getLocalize(),
+                           withBlock: nil)
             })
             .disposed(by: self.disposeBag)
         

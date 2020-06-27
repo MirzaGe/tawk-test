@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import Combine
 
-class UserDetailViewController: UIViewController, InitFromNib {
+class UserDetailViewController: BaseViewController, InitFromNib {
 
     // MARK: - Outlets
     @IBOutlet weak var blurredImage: UIImageView!
@@ -96,6 +96,17 @@ class UserDetailViewController: UIViewController, InitFromNib {
             .subscribe(onNext: { [unowned self] (user) in
                 self.removeShimmerView()
                 self.setupUserData(data: user)
+            })
+            .disposed(by: self.disposeBag)
+        
+        viewModel?.outputs()
+            .error
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] (message) in
+                self.alert(title: AppStrings.errorTitle.rawValue.getLocalize(),
+                           okayButtonTitle: AppStrings.okTitle.rawValue.getLocalize(),
+                           withBlock: nil)
             })
             .disposed(by: self.disposeBag)
         
