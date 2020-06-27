@@ -10,6 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDetailViewController" customModule="GitHubApp" customModuleProvider="target">
             <connections>
+                <outlet property="blogLabel" destination="iJH-fL-r5w" id="R1A-B9-Z3h"/>
+                <outlet property="blurredImage" destination="bGq-zw-j3z" id="7UA-KO-ahW"/>
+                <outlet property="companyLabel" destination="UK6-3d-vKh" id="aax-Hj-PPc"/>
+                <outlet property="followersLabel" destination="ta8-x5-dZY" id="LoP-2T-6bg"/>
+                <outlet property="followingLabel" destination="MxY-m6-gmy" id="T2t-un-unF"/>
+                <outlet property="nameLabel" destination="lDM-2n-1rT" id="dyh-Yy-4hM"/>
+                <outlet property="notesTextView" destination="Egc-iq-gfX" id="Ubq-iN-v7x"/>
+                <outlet property="saveButton" destination="f9P-79-v1o" id="SYl-nO-rKq"/>
+                <outlet property="userImage" destination="UwL-SC-SS5" id="ZHS-te-boa"/>
                 <outlet property="view" destination="clo-lg-hok" id="SJf-hI-7Yt"/>
             </connections>
         </placeholder>

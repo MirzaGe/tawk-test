@@ -34,7 +34,7 @@ class MainCoordinator: CoordinatorType {
 extension MainCoordinator: UsersViewControllerRoute {
     
     func routeToUserDetail(_ vc: UsersViewController, data: UserFormatter) {
-        let vc = UserDetailComposer.composeWith()
+        let vc = UserDetailComposer.composeWith(user: data)
         
         self.navigationVc.pushViewController(vc, animated: true)
     }

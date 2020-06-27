@@ -34,6 +34,12 @@
 		4A76B41124A6BA3600357EE4 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A76B41024A6BA3600357EE4 /* UserDetailViewController.xib */; };
 		4A76B41324A6BC6E00357EE4 /* UserDetailCompoer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B41224A6BC6E00357EE4 /* UserDetailCompoer.swift */; };
 		4A76B41524A6BD9700357EE4 /* InitFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B41424A6BD9700357EE4 /* InitFromNib.swift */; };
+		4A76B41724A713F500357EE4 /* GetUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B41624A713F500357EE4 /* GetUserUseCase.swift */; };
+		4A76B41924A7146500357EE4 /* GetUserGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B41824A7146500357EE4 /* GetUserGateway.swift */; };
+		4A76B41B24A714D500357EE4 /* GetUserApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B41A24A714D500357EE4 /* GetUserApiRequest.swift */; };
+		4A76B41D24A716FA00357EE4 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B41C24A716FA00357EE4 /* UserDetailViewModel.swift */; };
+		4A76B42024A735DC00357EE4 /* UserDetailShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76B41F24A735DC00357EE4 /* UserDetailShimmerView.swift */; };
+		4A76B42224A735EF00357EE4 /* UserDetailShimmerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A76B42124A735EF00357EE4 /* UserDetailShimmerView.xib */; };
 		4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680B24A5DDDC00668714 /* AppDelegate.swift */; };
 		4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */; };
 		4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD681424A5DDE300668714 /* Assets.xcassets */; };
@@ -100,6 +106,12 @@
 		4A76B41024A6BA3600357EE4 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		4A76B41224A6BC6E00357EE4 /* UserDetailCompoer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailCompoer.swift; sourceTree = "<group>"; };
 		4A76B41424A6BD9700357EE4 /* InitFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitFromNib.swift; sourceTree = "<group>"; };
+		4A76B41624A713F500357EE4 /* GetUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUseCase.swift; sourceTree = "<group>"; };
+		4A76B41824A7146500357EE4 /* GetUserGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserGateway.swift; sourceTree = "<group>"; };
+		4A76B41A24A714D500357EE4 /* GetUserApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserApiRequest.swift; sourceTree = "<group>"; };
+		4A76B41C24A716FA00357EE4 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		4A76B41F24A735DC00357EE4 /* UserDetailShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailShimmerView.swift; sourceTree = "<group>"; };
+		4A76B42124A735EF00357EE4 /* UserDetailShimmerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailShimmerView.xib; sourceTree = "<group>"; };
 		4AFD680824A5DDDC00668714 /* GitHubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD680B24A5DDDC00668714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AFD680D24A5DDDC00668714 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				4A5A607924A645690016D35A /* GetUsersUseCase.swift */,
+				4A76B41624A713F500357EE4 /* GetUserUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -218,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				4A5A607C24A6461F0016D35A /* GetUsersGateway.swift */,
+				4A76B41824A7146500357EE4 /* GetUserGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -275,6 +289,7 @@
 			children = (
 				4A5A609124A653C90016D35A /* GetUsersApiRequest.swift */,
 				4A5A609324A654790016D35A /* HTTPMethod.swift */,
+				4A76B41A24A714D500357EE4 /* GetUserApiRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -318,11 +333,22 @@
 		4A76B40D24A6B96A00357EE4 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
+				4A76B41E24A735AB00357EE4 /* ShimmerView */,
 				4A76B41224A6BC6E00357EE4 /* UserDetailCompoer.swift */,
 				4A76B40E24A6B98800357EE4 /* UserDetailViewController.swift */,
 				4A76B41024A6BA3600357EE4 /* UserDetailViewController.xib */,
+				4A76B41C24A716FA00357EE4 /* UserDetailViewModel.swift */,
 			);
 			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		4A76B41E24A735AB00357EE4 /* ShimmerView */ = {
+			isa = PBXGroup;
+			children = (
+				4A76B41F24A735DC00357EE4 /* UserDetailShimmerView.swift */,
+				4A76B42124A735EF00357EE4 /* UserDetailShimmerView.xib */,
+			);
+			path = ShimmerView;
 			sourceTree = "<group>";
 		};
 		4AFD67FF24A5DDDC00668714 = {
@@ -588,6 +614,7 @@
 			files = (
 				4AFD685624A610A200668714 /* Colors.xcassets in Resources */,
 				4A76B41124A6BA3600357EE4 /* UserDetailViewController.xib in Resources */,
+				4A76B42224A735EF00357EE4 /* UserDetailShimmerView.xib in Resources */,
 				4AFD685D24A612F500668714 /* Localizable.strings in Resources */,
 				4AFD681824A5DDE300668714 /* LaunchScreen.storyboard in Resources */,
 				4AFD681524A5DDE300668714 /* Assets.xcassets in Resources */,
@@ -712,9 +739,12 @@
 				4A5A607D24A6461F0016D35A /* GetUsersGateway.swift in Sources */,
 				4AFD684E24A5F53A00668714 /* UsersViewController.swift in Sources */,
 				4A5A608D24A64EE50016D35A /* JSONEncoder+camelToSnakeCase.swift in Sources */,
+				4A76B41724A713F500357EE4 /* GetUserUseCase.swift in Sources */,
+				4A76B41D24A716FA00357EE4 /* UserDetailViewModel.swift in Sources */,
 				4A1B40C724A62D160048FFF3 /* Reusable.swift in Sources */,
 				4A5A607724A63F050016D35A /* User.swift in Sources */,
 				4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */,
+				4A76B42024A735DC00357EE4 /* UserDetailShimmerView.swift in Sources */,
 				4AFD686424A6261400668714 /* UserTableViewCell.swift in Sources */,
 				4A5A608824A64C750016D35A /* ApiResponse.swift in Sources */,
 				4A76043F24A67B2700342D56 /* UIView+.swift in Sources */,
@@ -728,7 +758,9 @@
 				4A5A609624A6582A0016D35A /* UserGateway.swift in Sources */,
 				4A5A608B24A64E9D0016D35A /* JSONDecoder+snakeToCamelCase.swift in Sources */,
 				4AFD685A24A611BC00668714 /* AppColors.swift in Sources */,
+				4A76B41924A7146500357EE4 /* GetUserGateway.swift in Sources */,
 				4AFD684424A5E93A00668714 /* MainCoordinator.swift in Sources */,
+				4A76B41B24A714D500357EE4 /* GetUserApiRequest.swift in Sources */,
 				4A5A609424A654790016D35A /* HTTPMethod.swift in Sources */,
 				4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */,
 				4A5A608F24A64FAA0016D35A /* ApiLogger.swift in Sources */,

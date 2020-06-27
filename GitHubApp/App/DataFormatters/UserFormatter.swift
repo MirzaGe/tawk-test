@@ -38,4 +38,56 @@ struct UserFormatter {
         return self.user.note == nil ? false : true
     }
     
+    //
+    
+    func getName() -> String {
+        guard let name = self.user.name else { return "" }
+        
+        return name
+    }
+    
+    func getFormattedName() -> String {
+        return "Name: \(getName())"
+    }
+    
+    func getCompany() -> String {
+        guard let company = self.user.company else { return "" }
+        
+        return company
+    }
+    
+    func getFormattedCompany() -> String {
+        return "Company: \(getCompany())"
+    }
+    
+    func getBlog() ->  String {
+        guard let blog = self.user.blog else { return "" }
+        
+        return blog
+    }
+    
+    func getFormattedBlog() -> String {
+        return "Blog: \(getBlog())"
+    }
+    
+    func getFollowers() -> Int {
+        guard let followers = self.user.followers else { return 0 }
+        
+        return followers
+    }
+    
+    func getFormattedFollowers() -> String {
+        return "Followers: \(getFollowers())"
+    }
+    
+    func getFollowing() -> Int {
+        guard let following = self.user.following else { return 0 }
+        
+        return following
+    }
+    
+    func getFormattedFollowing() -> String {
+        return "Following: \(getFollowing())"
+    }
+    
 }

@@ -41,6 +41,7 @@ class UsersViewController: UIViewController {
     }()
     
     private var usersShimmerView: UsersShimmerView?
+    var hasAppear: Bool = false
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -48,19 +49,22 @@ class UsersViewController: UIViewController {
         
         setupViews()
         bindViewModel()
-        
     }
     
-    override func loadView() {
-        super.loadView()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        viewModel?.getUsers()
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        self.usersShimmerView?.startShimmer()
+        if !hasAppear {
+            self.usersShimmerView?.startShimmer()
+            self.viewModel?.getUsers()
+            hasAppear.toggle()
+        }
     }
     
     private func setupViews() {

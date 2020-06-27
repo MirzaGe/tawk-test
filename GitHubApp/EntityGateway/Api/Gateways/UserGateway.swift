@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ApiUserGateway: UsersGateway {
+protocol ApiUserGateway: UsersGateway, UserGateway {
 }
 
 class ApiUserGatewayImpl: ApiUserGateway {
@@ -33,6 +33,25 @@ class ApiUserGatewayImpl: ApiUserGateway {
             case .failure(let error):
                 completionHandler(.failure(error))
             }
+        }
+        
+    }
+    
+    func getUser(params: GetUserParameters, completionHandler: @escaping UserEntityGatewayCompletionHandler) {
+        
+        let request = GetUserApiRequest(params: params)
+        
+        self.apiClient.execute(request: request) {
+            (result: Result<ApiResponse<ApiUser>, Error>) in
+            
+            switch result {
+            case .success(let response):
+                let user = response.entity.user
+                completionHandler(.success(user))
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+            
         }
         
     }
