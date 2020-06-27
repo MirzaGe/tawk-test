@@ -412,8 +412,8 @@
 		4AFD683E24A5E24800668714 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				4A76B40D24A6B96A00357EE4 /* UserDetail */,
 				4AFD685124A604AF00668714 /* Launch */,
+				4A76B40D24A6B96A00357EE4 /* UserDetail */,
 				4AFD684C24A5F52400668714 /* Users */,
 			);
 			path = Screens;

@@ -13,6 +13,7 @@ class UserDetailViewController: UIViewController, InitFromNib {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.largeTitleDisplayMode = .never
     }
 
 }

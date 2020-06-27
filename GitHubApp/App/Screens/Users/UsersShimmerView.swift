@@ -79,6 +79,7 @@ class UsersShimmerView: UIView {
             
             let usernameView = UIView()
             usernameView.translatesAutoresizingMaskIntoConstraints = false
+            usernameView.setRadius(radius: 5)
             detailStackView.addArrangedSubview(usernameView)
             
             NSLayoutConstraint.activate([
@@ -89,6 +90,7 @@ class UsersShimmerView: UIView {
             
             let urlView = UIView()
             urlView.translatesAutoresizingMaskIntoConstraints = false
+            urlView.setRadius(radius: 5)
             detailStackView.addArrangedSubview(urlView)
             
             NSLayoutConstraint.activate([
