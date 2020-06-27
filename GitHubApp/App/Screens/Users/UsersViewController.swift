@@ -51,19 +51,14 @@ class UsersViewController: BaseViewController {
         bindViewModel()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-        
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         
         if !hasAppear {
             self.usersShimmerView?.startShimmer()
             self.viewModel?.getUsers()
             hasAppear.toggle()
+        } else {
+            self.viewModel?.getUsers()
         }
         
     }
@@ -184,9 +179,9 @@ class UsersViewController: BaseViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] (data) in
                 if !data {
+                    self.refreshControl.endRefreshing()
                     self.tableView.tableFooterView = nil
                     self.usersShimmerView?.removeFromSuperview()
-                    self.usersShimmerView = nil
                 }
             })
             .disposed(by: self.disposeBag)

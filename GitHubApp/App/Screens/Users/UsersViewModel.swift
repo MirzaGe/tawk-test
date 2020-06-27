@@ -29,6 +29,8 @@ class UsersViewModel: UsersViewModelOutputs {
     
     fileprivate var getUsersUseCase: GetUsersUseCase
     
+    private var queue = OperationQueue()
+    
     init(getUsersUseCase: GetUsersUseCase) {
         self.getUsersUseCase = getUsersUseCase
     }
@@ -75,28 +77,36 @@ extension UsersViewModel: UsersViewModelInputs {
         
         if _isFiltering { return }
         
-        let params = GetUsersParameters(since: since)
+        queue.cancelAllOperations()
+        queue.qualityOfService = .background
         
-        self.getUsersUseCase.getUsers(params: params) { [weak self] (result) in
-            guard let self = self else { return }
+        let operation = BlockOperation {
+
+            let params = GetUsersParameters(since: since)
             
-            switch result {
-            case .success(let users):
+            self.getUsersUseCase.getUsers(params: params) { [weak self] (result) in
+                guard let self = self else { return }
                 
-                if let lastUser = users.last {
-                    self._sinceUserId = lastUser.id
+                switch result {
+                case .success(let users):
+                    
+                    if let lastUser = users.last {
+                        self._sinceUserId = lastUser.id
+                    }
+                    
+                    self._users.append(contentsOf: users.map { UserFormatter(user: $0) })
+                    self.users.accept(self._users)
+                    self.isLoadingMoreUsers.accept(false)
+                
+                case .failure(let error):
+                    self.error.accept("\(error.localizedDescription)")
                 }
                 
-                self._users.append(contentsOf: users.map { UserFormatter(user: $0) })
-                self.users.accept(self._users)
-                self.isLoadingMoreUsers.accept(false)
-            
-            case .failure(let error):
-                self.error.accept("\(error.localizedDescription)")
             }
             
         }
         
+        self.queue.addOperation(operation)
     }
     
     func searchUser(key: String) {
@@ -105,9 +115,9 @@ extension UsersViewModel: UsersViewModelInputs {
             self._isFiltering = true
             self._filteredUsers = self._users.filter { (user) -> Bool in
                 let usernameMatch = user.getUsername().lowercased().contains(key.lowercased())
-                // note match
+                let noteMatch = user.getNotes().lowercased().contains(key.lowercased())
                 
-                return usernameMatch
+                return usernameMatch || noteMatch
             }
             
             self.users.accept(_filteredUsers)

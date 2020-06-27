@@ -14,6 +14,7 @@ enum AppStrings: String {
     case errorTitle = "ERROR_TITLE"
     case okTitle = "OK_TITLE"
     case successTitle = "SUCCESS_TITLE"
+    case noteAddedMessage = "NOTE_ADDED_MESSAGE"
     
 }
 

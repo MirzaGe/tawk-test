@@ -28,6 +28,8 @@ class UserDetailViewModel: UserDetailViewModelOutputs {
     fileprivate var noteUseCase: NoteUseCase
     private var _user: UserFormatter
     
+    private var queue = OperationQueue()
+    
     init(getUserUseCase: GetUserUseCase,
          noteUseCase: NoteUseCase,
          user: UserFormatter) {
@@ -50,21 +52,30 @@ extension UserDetailViewModel: UserDetailViewModelInputs {
     
     func getUser() {
         
-        let params = GetUserParameters(username: _user.getUsername())
+        queue.cancelAllOperations()
+        queue.qualityOfService = .background
         
-        self.getUserUseCase.getUser(params: params) {
-            [weak self] (result) in
-            guard let self = self else { return }
+        let operation = BlockOperation {
             
-            switch result {
-            case .success(let user):
-                self._user = UserFormatter(user: user)
-                self.user.accept(self._user)
-            case .failure(let error):
-                self.error.accept(error.localizedDescription)
+            let params = GetUserParameters(username: _user.getUsername())
+            
+            self.getUserUseCase.getUser(params: params) {
+                [weak self] (result) in
+                guard let self = self else { return }
+                
+                switch result {
+                case .success(let user):
+                    self._user = UserFormatter(user: user)
+                    self.user.accept(self._user)
+                case .failure(let error):
+                    self.error.accept(error.localizedDescription)
+                }
+                
             }
             
         }
+        
+        self.queue.addOperation(operation)
         
     }
     
@@ -78,7 +89,7 @@ extension UserDetailViewModel: UserDetailViewModelInputs {
             
             switch result {
             case .success(_):
-                self.message.accept("Note added.")
+                self.message.accept(AppStrings.noteAddedMessage.rawValue.getLocalize())
             case .failure(let error):
                 self.error.accept(error.localizedDescription)
             }
