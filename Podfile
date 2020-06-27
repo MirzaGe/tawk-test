@@ -6,10 +6,13 @@ target 'GitHubApp' do
   use_frameworks!
 
   # Pods for GitHubApp
+  
+  # UI
+  pod 'IQKeyboardManagerSwift', '~> 6.5.5'
 
   # Reactice Programming framework
-  pod 'RxSwift',                    '~> 5.0.1'
-  pod 'RxCocoa',                    '~> 5.0.1'
+  pod 'RxSwift', '~> 5.0.1'
+  pod 'RxCocoa', '~> 5.0.1'
 
   target 'GitHubAppTests' do
     inherit! :search_paths
