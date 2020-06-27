@@ -113,11 +113,24 @@ class UserDetailViewController: BaseViewController, InitFromNib {
             .disposed(by: self.disposeBag)
         
         viewModel?.outputs()
+            .message
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] (message) in
+                self.alert(title: AppStrings.successTitle.rawValue.getLocalize(),
+                           message: message,
+                           okayButtonTitle: AppStrings.okTitle.rawValue.getLocalize(),
+                           withBlock: nil)
+            })
+            .disposed(by: self.disposeBag)
+        
+        viewModel?.outputs()
             .error
             .asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] (message) in
                 self.alert(title: AppStrings.errorTitle.rawValue.getLocalize(),
+                           message: message,
                            okayButtonTitle: AppStrings.okTitle.rawValue.getLocalize(),
                            withBlock: nil)
             })

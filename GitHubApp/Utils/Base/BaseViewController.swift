@@ -33,7 +33,6 @@ class BaseViewController: UIViewController {
             alertController.addAction(cancelAction)
         }
         
-        alertController.view.tintColor = .black
         present(alertController, animated: true, completion: nil)
     }
     

@@ -13,6 +13,7 @@ enum AppStrings: String {
     case usersScreenTitle = "USERS_SCREEN_TITLE"
     case errorTitle = "ERROR_TITLE"
     case okTitle = "OK_TITLE"
+    case successTitle = "SUCCESS_TITLE"
     
 }
 
