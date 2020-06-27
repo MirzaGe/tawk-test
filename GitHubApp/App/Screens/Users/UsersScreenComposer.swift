@@ -14,11 +14,18 @@ final class UsersScreenComposer {
     
     static func composeWith() -> UsersViewController {
         
+        // setup api
         let apiLogger = ApiLogger()
         let apiClient = ApiClientImpl(config: .default, logger: apiLogger)
         let apiGateway = ApiUserGatewayImpl(apiClient: apiClient)
         
-        let getUsersUseCase = GetUsersUseCaseImpl(gateway: apiGateway)
+        // setup coredata
+        let coreDataStack = CoreDataStackImplementation()
+        
+        // setup cache middleware
+        let cacheGateway = CacheUsersGateway(apiGateway: apiGateway, localPersistence: coreDataStack)
+        
+        let getUsersUseCase = GetUsersUseCaseImpl(gateway: cacheGateway)
         
         let vm = UsersViewModel(getUsersUseCase: getUsersUseCase)
         

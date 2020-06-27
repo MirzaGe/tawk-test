@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+// This need refactoring
+
 protocol CoreDataStack {
     var persistentContainer: NSPersistentContainer { get }
     func saveContext()
@@ -27,7 +29,7 @@ class CoreDataStackImplementation {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "Library")
+        let container = NSPersistentContainer(name: "GitHubApp")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -61,6 +63,51 @@ class CoreDataStackImplementation {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func clearUsersStorage() {
+        let managedObjectContext = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDUser")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try managedObjectContext.execute(batchDeleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    
+    func saveUsers(users: [User]) {
+        var cdUsers: [CDUser] = []
+
+        for user in users {
+            let entity = NSEntityDescription.entity(forEntityName: "CDUser", in: persistentContainer.viewContext)
+            let newUser = NSManagedObject(entity: entity!, insertInto: persistentContainer.viewContext) as! CDUser
+            newUser.setData(user: user)
+            cdUsers.append(newUser)
+        }
+        
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            print("Failed saving users.")
+        }
+    }
+    
+    func getUsers() -> [CDUser] {
+        
+        let managedObjectContext = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<CDUser>(entityName: "CDUser")
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        do {
+            let users = try managedObjectContext.fetch(fetchRequest)
+            return users
+        } catch let error {
+            print(error)
+        }
+        
+        return []
+        
     }
     
 }

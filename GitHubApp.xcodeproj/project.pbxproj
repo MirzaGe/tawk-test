@@ -10,6 +10,8 @@
 		325BD1BC6F9B9F84A0CD3F56 /* Pods_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADA0A06611171B5944CD500 /* Pods_GitHubAppUITests.framework */; };
 		4A1B40C724A62D160048FFF3 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B40C624A62D160048FFF3 /* Reusable.swift */; };
 		4A1B40C924A62E0A0048FFF3 /* UserTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */; };
+		4A3056A924A773CE00E5B5C4 /* LocalPersistenceUserGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3056A824A773CE00E5B5C4 /* LocalPersistenceUserGateway.swift */; };
+		4A3056AC24A7763000E5B5C4 /* CacheUsersGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3056AB24A7763000E5B5C4 /* CacheUsersGateway.swift */; };
 		4A5A607324A6394C0016D35A /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607224A6394C0016D35A /* PreviewView.swift */; };
 		4A5A607724A63F050016D35A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607624A63F050016D35A /* User.swift */; };
 		4A5A607A24A645690016D35A /* GetUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607924A645690016D35A /* GetUsersUseCase.swift */; };
@@ -27,9 +29,10 @@
 		4A5A609B24A6601C0016D35A /* UserFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609A24A6601C0016D35A /* UserFormatter.swift */; };
 		4A6263C624A7596100BB0E23 /* GitHubApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263C424A7596100BB0E23 /* GitHubApp.xcdatamodeld */; };
 		4A6263C824A75CF900BB0E23 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263C724A75CF900BB0E23 /* CoreDataStack.swift */; };
-		4A6263CD24A764A400BB0E23 /* CoreDataNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263CB24A764A400BB0E23 /* CoreDataNote.swift */; };
 		4A6263D024A76BC200BB0E23 /* NoteGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263CF24A76BC200BB0E23 /* NoteGateway.swift */; };
 		4A6263D224A76C0200BB0E23 /* NoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263D124A76C0200BB0E23 /* NoteUseCase.swift */; };
+		4A6263DA24A7710500BB0E23 /* CDUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263D624A7710500BB0E23 /* CDUser.swift */; };
+		4A6263DC24A7710500BB0E23 /* CDNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263D824A7710500BB0E23 /* CDNote.swift */; };
 		4A76043924A6746800342D56 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76043824A6746800342D56 /* ImageCache.swift */; };
 		4A76043B24A6758600342D56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76043A24A6758600342D56 /* ImageLoader.swift */; };
 		4A76043D24A67A2700342D56 /* UIView+shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76043C24A67A2700342D56 /* UIView+shimmer.swift */; };
@@ -88,6 +91,8 @@
 		3263E87CA05DEB1419F2E480 /* Pods-GitHubAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GitHubAppUITests/Pods-GitHubAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A1B40C624A62D160048FFF3 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableDataSource.swift; sourceTree = "<group>"; };
+		4A3056A824A773CE00E5B5C4 /* LocalPersistenceUserGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersistenceUserGateway.swift; sourceTree = "<group>"; };
+		4A3056AB24A7763000E5B5C4 /* CacheUsersGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheUsersGateway.swift; sourceTree = "<group>"; };
 		4A5A607224A6394C0016D35A /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		4A5A607624A63F050016D35A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A5A607924A645690016D35A /* GetUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCase.swift; sourceTree = "<group>"; };
@@ -105,9 +110,10 @@
 		4A5A609A24A6601C0016D35A /* UserFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormatter.swift; sourceTree = "<group>"; };
 		4A6263C524A7596100BB0E23 /* GitHubApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubApp.xcdatamodel; sourceTree = "<group>"; };
 		4A6263C724A75CF900BB0E23 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		4A6263CB24A764A400BB0E23 /* CoreDataNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataNote.swift; sourceTree = "<group>"; };
 		4A6263CF24A76BC200BB0E23 /* NoteGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGateway.swift; sourceTree = "<group>"; };
 		4A6263D124A76C0200BB0E23 /* NoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteUseCase.swift; sourceTree = "<group>"; };
+		4A6263D624A7710500BB0E23 /* CDUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDUser.swift; sourceTree = "<group>"; };
+		4A6263D824A7710500BB0E23 /* CDNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDNote.swift; sourceTree = "<group>"; };
 		4A76043824A6746800342D56 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		4A76043A24A6758600342D56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		4A76043C24A67A2700342D56 /* UIView+shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+shimmer.swift"; sourceTree = "<group>"; };
@@ -213,6 +219,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		4A3056AA24A775F700E5B5C4 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				4A3056AB24A7763000E5B5C4 /* CacheUsersGateway.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		4A5A607424A63C7F0016D35A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				4A5A608024A648DA0016D35A /* Api */,
+				4A3056AA24A775F700E5B5C4 /* Cache */,
 				4A6263BF24A756C600BB0E23 /* LocalPersistence */,
 			);
 			path = EntityGateway;
@@ -332,7 +347,8 @@
 		4A6263C024A756FE00BB0E23 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				4A6263CB24A764A400BB0E23 /* CoreDataNote.swift */,
+				4A6263D824A7710500BB0E23 /* CDNote.swift */,
+				4A6263D624A7710500BB0E23 /* CDUser.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -340,6 +356,7 @@
 		4A6263C324A7591E00BB0E23 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				4A3056A824A773CE00E5B5C4 /* LocalPersistenceUserGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -788,6 +805,7 @@
 				4A1B40C924A62E0A0048FFF3 /* UserTableDataSource.swift in Sources */,
 				4A5A607D24A6461F0016D35A /* GetUsersGateway.swift in Sources */,
 				4A76B42524A74C7D00357EE4 /* BaseViewController.swift in Sources */,
+				4A6263DC24A7710500BB0E23 /* CDNote.swift in Sources */,
 				4AFD684E24A5F53A00668714 /* UsersViewController.swift in Sources */,
 				4A5A608D24A64EE50016D35A /* JSONEncoder+camelToSnakeCase.swift in Sources */,
 				4A76B41724A713F500357EE4 /* GetUserUseCase.swift in Sources */,
@@ -799,23 +817,25 @@
 				4AFD686424A6261400668714 /* UserTableViewCell.swift in Sources */,
 				4A5A608824A64C750016D35A /* ApiResponse.swift in Sources */,
 				4A6263C624A7596100BB0E23 /* GitHubApp.xcdatamodeld in Sources */,
-				4A6263CD24A764A400BB0E23 /* CoreDataNote.swift in Sources */,
 				4A76043F24A67B2700342D56 /* UIView+.swift in Sources */,
 				4AFD685024A5F60800668714 /* UsersScreenComposer.swift in Sources */,
 				4A5A608624A64ADA0016D35A /* ApiClient.swift in Sources */,
 				4A76044124A6A74F00342D56 /* UsersShimmerView.swift in Sources */,
 				4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */,
+				4A3056AC24A7763000E5B5C4 /* CacheUsersGateway.swift in Sources */,
 				4A76B41524A6BD9700357EE4 /* InitFromNib.swift in Sources */,
 				4A76B41324A6BC6E00357EE4 /* UserDetailCompoer.swift in Sources */,
 				4A5A607A24A645690016D35A /* GetUsersUseCase.swift in Sources */,
 				4A5A609624A6582A0016D35A /* UserGateway.swift in Sources */,
 				4A5A608B24A64E9D0016D35A /* JSONDecoder+snakeToCamelCase.swift in Sources */,
 				4AFD685A24A611BC00668714 /* AppColors.swift in Sources */,
+				4A6263DA24A7710500BB0E23 /* CDUser.swift in Sources */,
 				4A76B41924A7146500357EE4 /* GetUserGateway.swift in Sources */,
 				4AFD684424A5E93A00668714 /* MainCoordinator.swift in Sources */,
 				4A76B41B24A714D500357EE4 /* GetUserApiRequest.swift in Sources */,
 				4A5A609424A654790016D35A /* HTTPMethod.swift in Sources */,
 				4A6263D224A76C0200BB0E23 /* NoteUseCase.swift in Sources */,
+				4A3056A924A773CE00E5B5C4 /* LocalPersistenceUserGateway.swift in Sources */,
 				4AFD680E24A5DDDC00668714 /* SceneDelegate.swift in Sources */,
 				4A5A608F24A64FAA0016D35A /* ApiLogger.swift in Sources */,
 				4A5A609B24A6601C0016D35A /* UserFormatter.swift in Sources */,
