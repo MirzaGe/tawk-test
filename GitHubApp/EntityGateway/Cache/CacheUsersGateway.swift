@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CacheUsersGateway: UsersGateway {
+class CacheUsersGateway: UsersGateway, UserGateway {
     
     let apiUsersGateway: ApiUserGateway
     let localPersistence: CoreDataStackImplementation
@@ -22,6 +22,10 @@ class CacheUsersGateway: UsersGateway {
         apiUsersGateway.getUsers(params: params) { [weak self] (result) in
             self?.handleGetUsersApiResult(result, shouldClear: params.since == 0, completionHandler: completionHandler)
         }
+    }
+    
+    func getUser(params: GetUserParameters, completionHandler: @escaping UserEntityGatewayCompletionHandler) {
+//        self.apiUsersGateway.
     }
     
 }
@@ -39,16 +43,15 @@ extension CacheUsersGateway {
                 self.localPersistence.clearUsersStorage()
             }
             
-            print(" saving to local ")
-            
             self.localPersistence.saveUsers(users: users)
             completionHandler(result)
         case .failure(_):
             if shouldClear { // means its since its 0 we can  get local data
-                print(" load from local ")
                 
                 let users = self.localPersistence.getUsers().map { $0.user }
                 completionHandler(.success(users))
+            } else { // return empty
+                completionHandler(.success([]))
             }
         }
         

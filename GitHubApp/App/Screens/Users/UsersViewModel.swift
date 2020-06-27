@@ -21,6 +21,7 @@ protocol UsersViewModelInputs {
 protocol UsersViewModelOutputs {
     var users: BehaviorRelay<[UserFormatter]> { get }
     var isLoadingMoreUsers: PublishRelay<Bool> { get }
+    var shouldShowLoadMore: PublishRelay<Bool> { get }
     var error: PublishRelay<String> { get }
 }
 
@@ -34,12 +35,18 @@ class UsersViewModel: UsersViewModelOutputs {
     
     let users: BehaviorRelay<[UserFormatter]> = BehaviorRelay(value: [])
     let isLoadingMoreUsers: PublishRelay<Bool> = PublishRelay()
+    var shouldShowLoadMore: PublishRelay<Bool> = PublishRelay()
     let error: PublishRelay<String> = PublishRelay()
  
     // MARK: - Data properties
     private var _sinceUserId: Int = 0
     private var _users: [UserFormatter] = []
     private var _filteredUsers: [UserFormatter] = []
+    private var _isFiltering: Bool = false {
+        didSet {
+            self.shouldShowLoadMore.accept(!_isFiltering)
+        }
+    }
     
 }
 
@@ -65,6 +72,8 @@ extension UsersViewModel: UsersViewModelInputs {
     }
     
     private func getUsers(since: Int) {
+        
+        if _isFiltering { return }
         
         let params = GetUsersParameters(since: since)
         
@@ -93,6 +102,7 @@ extension UsersViewModel: UsersViewModelInputs {
     func searchUser(key: String) {
         
         if !key.isEmpty {
+            self._isFiltering = true
             self._filteredUsers = self._users.filter { (user) -> Bool in
                 let usernameMatch = user.getUsername().lowercased().contains(key.lowercased())
                 // note match
@@ -102,6 +112,7 @@ extension UsersViewModel: UsersViewModelInputs {
             
             self.users.accept(_filteredUsers)
         } else {
+            self._isFiltering = false
             self.users.accept(_users)
         }
         

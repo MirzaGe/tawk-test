@@ -21,6 +21,7 @@ final class UserTableDataSource: NSObject, UserTableDataSourceEvents {
     typealias Cell = UserTableViewCell
     
     var data: BehaviorRelay<[Data]> = BehaviorRelay(value: [])
+    var shouldLoadMore: Bool = true
     
     private weak var tableView: UITableView?
     
@@ -71,7 +72,7 @@ extension UserTableDataSource: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        if indexPath.row == (self.data.value.count - 1) {
+        if indexPath.row == (self.data.value.count - 1) && shouldLoadMore {
             let spinner = UIActivityIndicatorView(style: .medium)
             spinner.startAnimating()
             spinner.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(44))

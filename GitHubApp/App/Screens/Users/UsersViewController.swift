@@ -202,6 +202,15 @@ class UsersViewController: BaseViewController {
             })
             .disposed(by: self.disposeBag)
         
+        viewModel?.outputs()
+            .shouldShowLoadMore
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] (data) in
+                self.userDatasource?.shouldLoadMore = data
+            })
+            .disposed(by: self.disposeBag)
+        
     }
 
 }

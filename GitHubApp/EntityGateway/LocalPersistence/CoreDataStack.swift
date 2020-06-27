@@ -86,11 +86,7 @@ class CoreDataStackImplementation {
             cdUsers.append(newUser)
         }
         
-        do {
-            try persistentContainer.viewContext.save()
-        } catch {
-            print("Failed saving users.")
-        }
+        saveContext()
     }
     
     func getUsers() -> [CDUser] {
