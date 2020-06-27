@@ -38,6 +38,12 @@ struct UserFormatter {
         return self.user.note == nil ? false : true
     }
     
+    func getNotes() -> String {
+        guard let notes = self.user.note else { return "" }
+        
+        return notes
+    }
+    
     //
     
     func getName() -> String {

@@ -83,6 +83,8 @@ class UserTableViewCell: UITableViewCell {
     
     private func setupViews() {
         
+        self.selectionStyle = .none
+        
         contentView.addSubview(containerStackView)
         
         NSLayoutConstraint.activate([

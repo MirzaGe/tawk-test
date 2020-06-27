@@ -14,11 +14,18 @@ final class UserDetailComposer {
     
     static func composeWith(user: UserFormatter) -> UserDetailViewController {
         
+        // setup api
         let apiLogger = ApiLogger()
         let apiClient = ApiClientImpl(config: .default, logger: apiLogger)
         let apiGateway = ApiUserGatewayImpl(apiClient: apiClient)
         
-        let getUserUseCase = GetUserUseCaseImpl(gateway: apiGateway)
+        // setup coredata
+        let coreDataStack = CoreDataStackImplementation()
+        
+        // setup cache middleware
+        let cacheGateway = CacheUsersGateway(apiGateway: apiGateway, localPersistence: coreDataStack)
+        
+        let getUserUseCase = GetUserUseCaseImpl(gateway: cacheGateway)
         
         let vm = UserDetailViewModel(getUserUseCase: getUserUseCase, user: user)
         

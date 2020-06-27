@@ -25,7 +25,11 @@ class CacheUsersGateway: UsersGateway, UserGateway {
     }
     
     func getUser(params: GetUserParameters, completionHandler: @escaping UserEntityGatewayCompletionHandler) {
-//        self.apiUsersGateway.
+        self.apiUsersGateway.getUser(params: params) { [weak self] (result) in
+            self?.handleGetUserApiResult(result,
+                                         username: params.username,
+                                         completionHandler: completionHandler)
+        }
     }
     
 }
@@ -53,6 +57,21 @@ extension CacheUsersGateway {
             } else { // return empty
                 completionHandler(.success([]))
             }
+        }
+        
+    }
+    
+    fileprivate func handleGetUserApiResult(_ result: Result<User, Error>,
+                                            username: String,
+                                            completionHandler: @escaping UserEntityGatewayCompletionHandler) {
+        
+        switch result {
+        case .success(let user): // savev new data
+            self.localPersistence.updateUser(user: user)
+            completionHandler(result)
+        case .failure(_): // get local user
+            let user = self.localPersistence.getUser(username: username)!.user // not safe please refactor
+            completionHandler(.success(user))
         }
         
     }

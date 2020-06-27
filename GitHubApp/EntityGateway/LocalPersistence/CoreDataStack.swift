@@ -106,4 +106,34 @@ class CoreDataStackImplementation {
         
     }
     
+    func getUser(username: String) -> CDUser? {
+        
+        let managedObjectContext = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<CDUser>(entityName: "CDUser")
+        
+        let predicate = NSPredicate(format: "login == '\(username)'")
+        fetchRequest.predicate = predicate
+        
+        do {
+            let users = try managedObjectContext.fetch(fetchRequest)
+            return users.first
+        } catch let error {
+            print(error)
+            return nil
+        }
+        
+    }
+    
+    func updateUser(user: User) {
+        
+        guard let cdUser = getUser(username: user.login ?? "") else {
+            return
+        }
+        
+        cdUser.setData(user: user)
+        
+        saveContext()
+        
+    }
+    
 }

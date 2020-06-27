@@ -138,6 +138,8 @@ class UserDetailViewController: BaseViewController, InitFromNib {
             
         }
         
+        self.notesTextView.text = data.getNotes()
+        
     }
 
 }
