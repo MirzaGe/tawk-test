@@ -136,4 +136,34 @@ class CoreDataStackImplementation {
         
     }
     
+    func getNote(userId: Int) -> CDNote? {
+        
+        let managedObjectContext = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<CDNote>(entityName: "CDNote")
+        
+        let predicate = NSPredicate(format: "userId == \(userId)")
+        fetchRequest.predicate = predicate
+        
+        do {
+            let notes = try managedObjectContext.fetch(fetchRequest)
+            return notes.first
+        } catch let error {
+            print(error)
+            return nil
+        }
+        
+    }
+    
+    func saveNote(userId: Int, note: String) {
+        
+        guard let cdNote = getNote(userId: userId) else { return }
+        
+        cdNote.note = note
+        
+        print("Note saved!!!")
+        
+        saveContext()
+        
+    }
+    
 }

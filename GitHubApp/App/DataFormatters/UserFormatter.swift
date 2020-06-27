@@ -16,6 +16,10 @@ struct UserFormatter {
         self.user = user
     }
     
+    func getId() -> Int {
+        return self.user.id
+    }
+    
     func getUsername() -> String {
         guard let username = self.user.login else { return "" }
         

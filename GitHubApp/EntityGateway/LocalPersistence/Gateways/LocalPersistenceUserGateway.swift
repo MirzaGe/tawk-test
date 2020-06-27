@@ -8,17 +8,23 @@
 
 import Foundation
 
-protocol LocalPersistenceUserGateway {
+protocol LocalPersistenceUserGateway: NoteGateway {
 }
 
 class CoreDataGatewayImpl: LocalPersistenceUserGateway {
     
-    init() {
-        
+    let localPersistence: CoreDataStackImplementation
+    
+    init(localPersistence: CoreDataStackImplementation) {
+        self.localPersistence = localPersistence
     }
     
-//    func getUsers(params: GetUsersParameters, completionHandler: @escaping UsersEntityGatewayCompletionHandler) {
-//        <#code#>
-//    }
+    func saveNote(params: SaveNoteParameters, completionHandler: @escaping NoteUseCaseCompletionHandler) {
+        
+        self.localPersistence.saveNote(userId: params.userId, note: params.note)
+        
+        completionHandler(.success(()))
+        
+    }
     
 }

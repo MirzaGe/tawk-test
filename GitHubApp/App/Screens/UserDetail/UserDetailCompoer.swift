@@ -21,13 +21,18 @@ final class UserDetailComposer {
         
         // setup coredata
         let coreDataStack = CoreDataStackImplementation()
+        let localGateway = CoreDataGatewayImpl(localPersistence: coreDataStack)
         
         // setup cache middleware
         let cacheGateway = CacheUsersGateway(apiGateway: apiGateway, localPersistence: coreDataStack)
         
-        let getUserUseCase = GetUserUseCaseImpl(gateway: cacheGateway)
         
-        let vm = UserDetailViewModel(getUserUseCase: getUserUseCase, user: user)
+        let getUserUseCase = GetUserUseCaseImpl(gateway: cacheGateway)
+        let noteUseCase = NoteUseCaseImpl(gateway: localGateway)
+        
+        let vm = UserDetailViewModel(getUserUseCase: getUserUseCase,
+                                     noteUseCase: noteUseCase,
+                                     user: user)
         
         let vc = UserDetailViewController.initFromNib()
         vc.viewModel = vm

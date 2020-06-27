@@ -11,5 +11,5 @@ import Foundation
 typealias NoteGatewayCompletionHandler = (_ users: Result<Void, Error>) -> Void
 
 protocol NoteGateway {
-    
+    func saveNote(params: SaveNoteParameters, completionHandler: @escaping NoteUseCaseCompletionHandler)
 }

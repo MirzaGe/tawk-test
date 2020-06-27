@@ -39,6 +39,7 @@ class UserDetailViewController: BaseViewController, InitFromNib {
         super.viewDidLoad()
         
         setupViews()
+        setupViewsBindings()
         bindViewModel()
     }
     
@@ -84,6 +85,18 @@ class UserDetailViewController: BaseViewController, InitFromNib {
             blurredEffectView.leadingAnchor.constraint(equalTo: self.blurredImage.leadingAnchor),
             blurredEffectView.trailingAnchor.constraint(equalTo: self.blurredImage.trailingAnchor)
         ])
+        
+    }
+    
+    private func setupViewsBindings() {
+        
+        saveButton.rx
+            .tap
+            .asDriver()
+            .drive(onNext: { [unowned self] in
+                self.viewModel?.saveNote(self.notesTextView.text)
+            })
+            .disposed(by: self.disposeBag)
         
     }
     
