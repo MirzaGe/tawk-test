@@ -133,6 +133,8 @@ class UserTableViewCell: UITableViewCell {
             }
         }
         
+        notesImage.isHidden = !data.hasNote()
+        
     }
     
     private func setAvatar(image: UIImage?, isInverted: Bool) {

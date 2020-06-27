@@ -48,12 +48,30 @@ extension CacheUsersGateway {
             }
             
             self.localPersistence.saveUsers(users: users)
-            completionHandler(result)
+            
+            var newUsers: [User] = []
+            
+            for var user in users {
+                let note = self.localPersistence.getNote(userId: user.id)
+                user.note = note?.note
+                newUsers.append(user)
+            }
+            
+            completionHandler(.success(newUsers))
         case .failure(_):
             if shouldClear { // means its since its 0 we can  get local data
                 
                 let users = self.localPersistence.getUsers().map { $0.user }
-                completionHandler(.success(users))
+                
+                var newUsers: [User] = []
+                
+                for var user in users {
+                    let note = self.localPersistence.getNote(userId: user.id)
+                    user.note = note?.note
+                    newUsers.append(user)
+                }
+                
+                completionHandler(.success(newUsers))
             } else { // return empty
                 completionHandler(.success([]))
             }
@@ -66,11 +84,19 @@ extension CacheUsersGateway {
                                             completionHandler: @escaping UserEntityGatewayCompletionHandler) {
         
         switch result {
-        case .success(let user): // savev new data
+        case .success(var user): // savev new data
             self.localPersistence.updateUser(user: user)
-            completionHandler(result)
+            
+            let note = self.localPersistence.getNote(userId: user.id)
+            user.note = note?.note
+            
+            completionHandler(.success(user))
         case .failure(_): // get local user
-            let user = self.localPersistence.getUser(username: username)!.user // not safe please refactor
+            var user = self.localPersistence.getUser(username: username)!.user // not safe please refactor
+            
+            let note = self.localPersistence.getNote(userId: user.id)
+            user.note = note?.note
+            
             completionHandler(.success(user))
         }
         

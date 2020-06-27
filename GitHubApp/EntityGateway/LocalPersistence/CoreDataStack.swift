@@ -156,11 +156,16 @@ class CoreDataStackImplementation {
     
     func saveNote(userId: Int, note: String) {
         
-        guard let cdNote = getNote(userId: userId) else { return }
-        
-        cdNote.note = note
-        
-        print("Note saved!!!")
+        if let cdNote = getNote(userId: userId) {
+            cdNote.note = note
+        } else {
+            let entity = NSEntityDescription.entity(forEntityName: "CDNote", in: persistentContainer.viewContext)
+            let newNote = NSManagedObject(entity: entity!, insertInto: persistentContainer.viewContext) as! CDNote
+            
+            newNote.userId = Int32(exactly: NSNumber(integerLiteral: userId)) ?? 0
+            newNote.note = note
+            
+        }
         
         saveContext()
         

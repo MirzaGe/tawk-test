@@ -44,6 +44,6 @@ struct User {
     let createdAt: String?
     let updatedAt: String?
     
-    let note: String?
+    var note: String?
     
 }
