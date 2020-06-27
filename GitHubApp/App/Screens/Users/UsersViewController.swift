@@ -63,6 +63,23 @@ class UsersViewController: BaseViewController {
         
     }
     
+    private func setupObserver() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(backOnline),
+                                               name: AppNotificationName.onlineMode,
+                                               object: nil)
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func backOnline() { // to reload again once back online
+        self.viewModel?.getUsers()
+    }
+    
     private func setupViews() {
         
         // navigation
@@ -208,6 +225,10 @@ class UsersViewController: BaseViewController {
         
     }
 
+    private func getUsers() {
+        
+    }
+    
 }
 
 extension UsersViewController: UISearchResultsUpdating {

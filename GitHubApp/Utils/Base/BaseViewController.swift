@@ -89,6 +89,11 @@ class BaseViewController: UIViewController {
             print("Unable to start notifier")
         }
         
+        guard let connection = self.reachability?.connection else { return }
+        
+        self.fromOfflineMode = connection == .unavailable
+        NotificationCenter.default.post(name: AppNotificationName.offlineMode, object: nil)
+        
     }
     
     private func retryWhenConnectionIsAvailable() {
