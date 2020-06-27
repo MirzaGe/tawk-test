@@ -16,6 +16,9 @@ enum AppStrings: String {
     case successTitle = "SUCCESS_TITLE"
     case noteAddedMessage = "NOTE_ADDED_MESSAGE"
     
+    case offlineModeMessage = "OFFLINE_MODE_MESSAGE"
+    case onlineModeMessage = "ONLINE_MODE_MESSAGE"
+    
 }
 
 extension String {

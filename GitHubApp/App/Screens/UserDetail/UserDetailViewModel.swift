@@ -55,9 +55,9 @@ extension UserDetailViewModel: UserDetailViewModelInputs {
         queue.cancelAllOperations()
         queue.qualityOfService = .background
         
-        let operation = BlockOperation {
+        let operation = BlockOperation { [unowned self] in
             
-            let params = GetUserParameters(username: _user.getUsername())
+            let params = GetUserParameters(username: self._user.getUsername())
             
             self.getUserUseCase.getUser(params: params) {
                 [weak self] (result) in

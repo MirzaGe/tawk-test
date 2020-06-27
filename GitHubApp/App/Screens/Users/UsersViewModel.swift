@@ -80,7 +80,7 @@ extension UsersViewModel: UsersViewModelInputs {
         queue.cancelAllOperations()
         queue.qualityOfService = .background
         
-        let operation = BlockOperation {
+        let operation = BlockOperation { [unowned self] in
 
             let params = GetUsersParameters(since: since)
             

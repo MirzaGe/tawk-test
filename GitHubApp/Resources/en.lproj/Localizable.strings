@@ -11,3 +11,6 @@
 "OK_TITLE" = "Ok";
 "SUCCESS_TITLE" = "Success";
 "NOTE_ADDED_MESSAGE" = "Note added.";
+
+"OFFLINE_MODE_MESSAGE" = "Offline mode.";
+"ONLINE_MODE_MESSAGE" = "Back online.";
