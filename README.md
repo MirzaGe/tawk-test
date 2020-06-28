@@ -4,11 +4,15 @@ Online assessment for job application at tawk.to
 
 ## App Screenshots
 
-![Imgur](https://i.imgur.com/IcKmc31.png)
-![Imgur](https://i.imgur.com/Qps0efA.png)
-![Imgur](https://i.imgur.com/XPqWXCm.png)
-![Imgur](https://i.imgur.com/lcqgbnW.png)
-![Imgur](https://i.imgur.com/iXXom5J.png)
+<table>
+  <tr>
+    <td><img src="https://i.imgur.com/IcKmc31.png" width=270 height=480></td>
+    <td><img src="https://i.imgur.com/Qps0efA.png" width=270 height=480></td>
+    <td><img src="https://i.imgur.com/XPqWXCm.png" width=270 height=480></td>
+    <td><img src="https://i.imgur.com/lcqgbnW.png" width=270 height=480></td>
+    <td><img src="https://i.imgur.com/iXXom5J.png" width=270 height=480></td>
+  </tr>
+ </table>
 
 ## Accomplished Requirements
 - Swift 5.1.
