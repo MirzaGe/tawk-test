@@ -38,9 +38,11 @@ Online assessment for job application at tawk.to
 - CoreData save background
 - Search using name & note
 - Support dark mode
+- Unit Testing
 
 ## TODO
 - Add environment schemes for different environments
+- Add Unit test for Gateway & domain layer
 
 ## Any question
 - You can contact me through email: [jorillojohnroque@gmail.com](mailto:jorillojohnroque@gmail.com)
