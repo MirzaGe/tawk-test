@@ -14,14 +14,15 @@ target 'GitHubApp' do
   pod 'RxSwift', '~> 5.0.1'
   pod 'RxCocoa', '~> 5.0.1'
 
-  target 'GitHubAppTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'GitHubAppUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
+
+target 'GitHubAppTests' do
+   inherit! :search_paths
+   # Pods for testing
+ end
+
+ target 'GitHubAppUITests' do
+   inherit! :search_paths
+   # Pods for testing
+   
+ end

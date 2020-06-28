@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		325BD1BC6F9B9F84A0CD3F56 /* Pods_GitHubAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADA0A06611171B5944CD500 /* Pods_GitHubAppUITests.framework */; };
+		202E35F04DBF981651F6E772 /* libPods-GitHubAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FAB2F74892E62DBC27E628 /* libPods-GitHubAppTests.a */; };
 		4A1B40C724A62D160048FFF3 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B40C624A62D160048FFF3 /* Reusable.swift */; };
 		4A1B40C924A62E0A0048FFF3 /* UserTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */; };
 		4A3056A924A773CE00E5B5C4 /* LocalPersistenceUserGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3056A824A773CE00E5B5C4 /* LocalPersistenceUserGateway.swift */; };
@@ -74,7 +74,7 @@
 		4AFD686124A6135B00668714 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD686024A6135B00668714 /* AppStrings.swift */; };
 		4AFD686424A6261400668714 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD686324A6261400668714 /* UserTableViewCell.swift */; };
 		4E4607DF72CDFDC4BE655FC7 /* Pods_GitHubApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81386D42387610956F40EDBD /* Pods_GitHubApp.framework */; };
-		52BEA8582827B5803869134B /* Pods_GitHubAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC640DEA5408CAAF3E9FE968 /* Pods_GitHubAppTests.framework */; };
+		D0A9F45D80C640813987A9FE /* libPods-GitHubAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB96F00FE17926FA7549FEC /* libPods-GitHubAppUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0ADA0A06611171B5944CD500 /* Pods_GitHubAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FB96F00FE17926FA7549FEC /* libPods-GitHubAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitHubAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3263E87CA05DEB1419F2E480 /* Pods-GitHubAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GitHubAppUITests/Pods-GitHubAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A1B40C624A62D160048FFF3 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableDataSource.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		4AFD686324A6261400668714 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		76B4B3859C2BF2F95B215984 /* Pods-GitHubAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubAppUITests/Pods-GitHubAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		81386D42387610956F40EDBD /* Pods_GitHubApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC640DEA5408CAAF3E9FE968 /* Pods_GitHubAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1FAB2F74892E62DBC27E628 /* libPods-GitHubAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitHubAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44C82D9B70E964BAC16CDF4 /* Pods-GitHubAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppTests.release.xcconfig"; path = "Target Support Files/Pods-GitHubAppTests/Pods-GitHubAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F871D0AAC02830924AFCE82B /* Pods-GitHubApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubApp.debug.xcconfig"; path = "Target Support Files/Pods-GitHubApp/Pods-GitHubApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F8E0FA69DDA83D538BB3BE9A /* Pods-GitHubAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GitHubAppTests/Pods-GitHubAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BEA8582827B5803869134B /* Pods_GitHubAppTests.framework in Frameworks */,
+				202E35F04DBF981651F6E772 /* libPods-GitHubAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				325BD1BC6F9B9F84A0CD3F56 /* Pods_GitHubAppUITests.framework in Frameworks */,
+				D0A9F45D80C640813987A9FE /* libPods-GitHubAppUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				81386D42387610956F40EDBD /* Pods_GitHubApp.framework */,
-				BC640DEA5408CAAF3E9FE968 /* Pods_GitHubAppTests.framework */,
-				0ADA0A06611171B5944CD500 /* Pods_GitHubAppUITests.framework */,
+				C1FAB2F74892E62DBC27E628 /* libPods-GitHubAppTests.a */,
+				2FB96F00FE17926FA7549FEC /* libPods-GitHubAppUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
