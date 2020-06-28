@@ -12,6 +12,13 @@ Online assessment for job application at tawk.to
     <td><img src="https://i.imgur.com/lcqgbnW.png" width=350></td>
     <td><img src="https://i.imgur.com/iXXom5J.png" width=350></td>
   </tr>
+  <tr>
+    <td><img src="https://i.imgur.com/ok5gY8w.png" width=350></td>
+    <td><img src="https://i.imgur.com/J0RW0ST.png" width=350></td>
+    <td><img src="https://i.imgur.com/Ij9PEQg.png" width=350></td>
+    <td><img src="https://i.imgur.com/hfaTWXg.png" width=350></td>
+    <td></td>
+  </td>
  </table>
 
 ## Accomplished Requirements
@@ -37,7 +44,7 @@ Online assessment for job application at tawk.to
 - Utilize Result types
 - CoreData save background
 - Search using name & note
-- Support dark mode
+- Support dark & light mode
 - Unit Testing
 
 ## TODO
