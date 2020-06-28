@@ -6,11 +6,11 @@ Online assessment for job application at tawk.to
 
 <table>
   <tr>
-    <td><img src="https://i.imgur.com/IcKmc31.png" width=270 height=480></td>
-    <td><img src="https://i.imgur.com/Qps0efA.png" width=270 height=480></td>
-    <td><img src="https://i.imgur.com/XPqWXCm.png" width=270 height=480></td>
-    <td><img src="https://i.imgur.com/lcqgbnW.png" width=270 height=480></td>
-    <td><img src="https://i.imgur.com/iXXom5J.png" width=270 height=480></td>
+    <td><img src="https://i.imgur.com/IcKmc31.png" width=350></td>
+    <td><img src="https://i.imgur.com/Qps0efA.png" width=350></td>
+    <td><img src="https://i.imgur.com/XPqWXCm.png" width=350></td>
+    <td><img src="https://i.imgur.com/lcqgbnW.png" width=350></td>
+    <td><img src="https://i.imgur.com/iXXom5J.png" width=350></td>
   </tr>
  </table>
 
