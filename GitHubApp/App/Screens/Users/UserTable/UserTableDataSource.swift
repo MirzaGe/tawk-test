@@ -22,6 +22,8 @@ final class UserTableDataSource: NSObject, UserTableDataSourceEvents {
     var data: BehaviorRelay<[Data]> = BehaviorRelay(value: [])
     var shouldLoadMore: Bool = true
     
+    let reachability = try? Reachability()
+    
     private weak var tableView: UITableView?
     
     init(_ tableView: UITableView) {
@@ -79,8 +81,13 @@ extension UserTableDataSource: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
+        var isOffline = false
+        if let connection = self.reachability?.connection {
+            isOffline = connection == .unavailable
+        }
+        
         if indexPath.row == (self.data.value.count - 1)
-            && shouldLoadMore {
+            && shouldLoadMore && !isOffline {
             
             let spinner = UIActivityIndicatorView(style: .medium)
             spinner.startAnimating()

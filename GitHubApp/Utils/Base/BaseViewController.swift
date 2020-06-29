@@ -92,8 +92,10 @@ class BaseViewController: UIViewController {
         guard let connection = self.reachability?.connection else { return }
         
         self.fromOfflineMode = connection == .unavailable
-        NotificationCenter.default.post(name: AppNotificationName.offlineMode, object: nil)
         
+        if self.fromOfflineMode {
+            NotificationCenter.default.post(name: AppNotificationName.offlineMode, object: nil)
+        }
     }
     
     private func retryWhenConnectionIsAvailable() {
