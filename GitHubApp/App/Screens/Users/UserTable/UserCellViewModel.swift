@@ -6,4 +6,10 @@
 //  Copyright © 2020 JohnRoque Inc. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol UserCellViewModel {
+    
+    func dequeueCell(tableView: UITableView, indexPath: IndexPath)
+    
+}

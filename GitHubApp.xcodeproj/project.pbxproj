@@ -22,6 +22,9 @@
 		4A3F997324A8B5F00042CE9B /* GitHubAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F997224A8B5F00042CE9B /* GitHubAppTests.swift */; };
 		4A3F997624A8B8320042CE9B /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F997524A8B8320042CE9B /* User.json */; };
 		4A3F997724A8B8320042CE9B /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F997524A8B8320042CE9B /* User.json */; };
+		4A57635324A9DCBF0020832C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A57635224A9DCBF0020832C /* UserCell.swift */; };
+		4A57635524A9DDBE0020832C /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A57635424A9DDBE0020832C /* UserDataModel.swift */; };
+		4A57635724A9E3270020832C /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A57635624A9E3270020832C /* UserCellViewModel.swift */; };
 		4A5A607324A6394C0016D35A /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607224A6394C0016D35A /* PreviewView.swift */; };
 		4A5A607724A63F050016D35A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607624A63F050016D35A /* User.swift */; };
 		4A5A607A24A645690016D35A /* GetUsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A607924A645690016D35A /* GetUsersUseCase.swift */; };
@@ -110,6 +113,9 @@
 		4A3F997024A8B5E30042CE9B /* GitHubAppUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubAppUITests.swift; path = ../../../../../../../.Trash/GitHubAppUITests.swift; sourceTree = "<group>"; };
 		4A3F997224A8B5F00042CE9B /* GitHubAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubAppTests.swift; path = ../../../../../../../.Trash/GitHubAppTests.swift; sourceTree = "<group>"; };
 		4A3F997524A8B8320042CE9B /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		4A57635224A9DCBF0020832C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		4A57635424A9DDBE0020832C /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		4A57635624A9E3270020832C /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		4A5A607224A6394C0016D35A /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		4A5A607624A63F050016D35A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A5A607924A645690016D35A /* GetUsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersUseCase.swift; sourceTree = "<group>"; };
@@ -624,6 +630,9 @@
 			children = (
 				4AFD686324A6261400668714 /* UserTableViewCell.swift */,
 				4A1B40C824A62E0A0048FFF3 /* UserTableDataSource.swift */,
+				4A57635224A9DCBF0020832C /* UserCell.swift */,
+				4A57635424A9DDBE0020832C /* UserDataModel.swift */,
+				4A57635624A9E3270020832C /* UserCellViewModel.swift */,
 			);
 			path = UserTable;
 			sourceTree = "<group>";
@@ -884,6 +893,7 @@
 				4A76B41724A713F500357EE4 /* GetUserUseCase.swift in Sources */,
 				4A76B41D24A716FA00357EE4 /* UserDetailViewModel.swift in Sources */,
 				4A1B40C724A62D160048FFF3 /* Reusable.swift in Sources */,
+				4A57635724A9E3270020832C /* UserCellViewModel.swift in Sources */,
 				4A5A607724A63F050016D35A /* User.swift in Sources */,
 				4AFD680C24A5DDDC00668714 /* AppDelegate.swift in Sources */,
 				4A76B42024A735DC00357EE4 /* UserDetailShimmerView.swift in Sources */,
@@ -892,10 +902,12 @@
 				4A3F995C24A7E9F70042CE9B /* AppNotificationName.swift in Sources */,
 				4A6263C624A7596100BB0E23 /* GitHubApp.xcdatamodeld in Sources */,
 				4A76043F24A67B2700342D56 /* UIView+.swift in Sources */,
+				4A57635524A9DDBE0020832C /* UserDataModel.swift in Sources */,
 				4AFD685024A5F60800668714 /* UsersScreenComposer.swift in Sources */,
 				4A5A608624A64ADA0016D35A /* ApiClient.swift in Sources */,
 				4A76044124A6A74F00342D56 /* UsersShimmerView.swift in Sources */,
 				4AFD684224A5E8E600668714 /* CoordinatorType.swift in Sources */,
+				4A57635324A9DCBF0020832C /* UserCell.swift in Sources */,
 				4A3056AC24A7763000E5B5C4 /* CacheUsersGateway.swift in Sources */,
 				4A76B41524A6BD9700357EE4 /* InitFromNib.swift in Sources */,
 				4A76B41324A6BC6E00357EE4 /* UserDetailCompoer.swift in Sources */,

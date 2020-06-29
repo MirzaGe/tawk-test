@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+protocol UserDataModel {
+    var id: Int { get }
+    var login: String? { get }
+    var url: String? { get }
+    var avatarUrl: String? { get }
+    var note: String? { get set }
+    
+    var name: String? { get }
+    var company: String? { get }
+    var blog: String? { get }
+    var followers: Int? { get }
+    var following: Int? { get }
+}

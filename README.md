@@ -23,6 +23,7 @@ Online assessment for job application at tawk.to
 
 ## Accomplished Requirements
 - Swift 5.1.
+- Xcode 11.5
 - MVVM, Coordinator, Clean architecture
 - Use Codables
 - CoreData for data persisting.

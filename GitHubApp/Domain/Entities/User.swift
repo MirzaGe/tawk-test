@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User {
+struct User: UserDataModel {
     
     let login: String?
     let id: Int
