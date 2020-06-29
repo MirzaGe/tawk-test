@@ -104,7 +104,7 @@ struct UserFormatter: UserCellViewModel {
         
         var cell: UserCell? = nil
         
-        if indexPath.row == 4 {
+        if ((indexPath.row + 1) % 4) == 0 {
             
             if hasNote() {
                 cell = tableView.dequeueCell(ofType: UserNoteInvertedTableViewCell.self, for: indexPath)

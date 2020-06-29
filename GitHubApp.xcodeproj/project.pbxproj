@@ -42,6 +42,7 @@
 		4A5A609624A6582A0016D35A /* UserGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609524A6582A0016D35A /* UserGateway.swift */; };
 		4A5A609824A65AFA0016D35A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609724A65AFA0016D35A /* UsersViewModel.swift */; };
 		4A5A609B24A6601C0016D35A /* UserFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5A609A24A6601C0016D35A /* UserFormatter.swift */; };
+		4A5BDF5324AA345900AEE822 /* GitHubAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5BDF5224AA345900AEE822 /* GitHubAppUITests.swift */; };
 		4A6263C624A7596100BB0E23 /* GitHubApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263C424A7596100BB0E23 /* GitHubApp.xcdatamodeld */; };
 		4A6263C824A75CF900BB0E23 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263C724A75CF900BB0E23 /* CoreDataStack.swift */; };
 		4A6263D024A76BC200BB0E23 /* NoteGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6263CF24A76BC200BB0E23 /* NoteGateway.swift */; };
@@ -134,6 +135,7 @@
 		4A5A609524A6582A0016D35A /* UserGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGateway.swift; sourceTree = "<group>"; };
 		4A5A609724A65AFA0016D35A /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		4A5A609A24A6601C0016D35A /* UserFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormatter.swift; sourceTree = "<group>"; };
+		4A5BDF5224AA345900AEE822 /* GitHubAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAppUITests.swift; sourceTree = "<group>"; };
 		4A6263C524A7596100BB0E23 /* GitHubApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubApp.xcdatamodel; sourceTree = "<group>"; };
 		4A6263C724A75CF900BB0E23 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		4A6263CF24A76BC200BB0E23 /* NoteGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteGateway.swift; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				4AFD682F24A5DDE300668714 /* Info.plist */,
+				4A5BDF5224AA345900AEE822 /* GitHubAppUITests.swift */,
 			);
 			path = GitHubAppUITests;
 			sourceTree = "<group>";
@@ -955,6 +958,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A5BDF5324AA345900AEE822 /* GitHubAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
