@@ -12,12 +12,57 @@ import XCTest
 
 class UsersGatewayTests: XCTestCase {
     
+    var sut: ApiUserGatewayImpl!
+    
     override func setUp() {
         super.setUp()
+        
+        self.sut = makeSUT()
     }
     
     override class func tearDown() {
         super.tearDown()
+        
+    }
+    
+    func test_get_users_response() {
+        
+        let expectation = self.expectation(description: "Users Response Parse Expectation")
+        
+        let params = GetUsersParameters(since: 0)
+        
+        sut.getUsers(params: params) { (result) in
+            
+            switch result {
+            case .success:
+                expectation.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+            
+        }
+        
+        self.waitForExpectations(timeout: 10.0, handler: nil)
+    }
+    
+    func test_get_user_response() {
+        
+        let expectation = self.expectation(description: "User Response Parse Expectation")
+        
+        let params = GetUserParameters(username: "momo")
+        
+        sut.getUser(params: params) { (result) in
+            
+            switch result {
+            case .success:
+                expectation.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+            
+        }
+        
+        self.waitForExpectations(timeout: 10.0, handler: nil)
         
     }
     
@@ -54,7 +99,7 @@ class UsersGatewayTests: XCTestCase {
     
     private func makeSUT() -> ApiUserGatewayImpl {
         
-        let apiClient = ApiClientMock()
+        let apiClient = ApiClientImpl(config: .default, logger: nil)
         let userGateway = ApiUserGatewayImpl(apiClient: apiClient)
         
         return userGateway
