@@ -25,7 +25,7 @@ Online assessment for job application at tawk.to
 - Swift 5.1.
 - Xcode 11.5
 - MVVM, Coordinator, Clean architecture
-- Use Codables
+- Use Codables -> use in Gateway layer models in API
 - CoreData for data persisting.
 - UIKit using AutoLayout.
 - 1 network request at a time.
@@ -47,6 +47,7 @@ Online assessment for job application at tawk.to
 - Search using name & note
 - Support dark & light mode
 - Unit Testing
+- Flexible tableCells using protocols
 
 ## TODO
 - Add environment schemes for different environments
