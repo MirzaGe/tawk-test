@@ -43,7 +43,6 @@ class UserTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.font = .boldSystemFont(ofSize: 16)
-        label.text = "Test"
         return label
     }()
     
@@ -51,7 +50,6 @@ class UserTableViewCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 16)
-        label.text = "Test"
         return label
     }()
     
