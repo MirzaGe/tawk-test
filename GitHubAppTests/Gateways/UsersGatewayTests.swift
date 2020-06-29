@@ -36,6 +36,22 @@ class UsersGatewayTests: XCTestCase {
         XCTAssertEqual(apiClient.inputRequest?.url, getUsersUrl.urlRequest.url)
     }
     
+    func test_get_user() {
+        
+        let apiClient = ApiClientMock()
+        let sut = ApiUserGatewayImpl(apiClient: apiClient)
+    
+        let params = GetUserParameters(username: "momo")
+        
+        sut.getUser(params: params) { (_) in }
+        
+        XCTAssertTrue(apiClient.executeCalled)
+        
+        let getUserUrl = GetUserApiRequest(params: params)
+        
+        XCTAssertEqual(apiClient.inputRequest?.url, getUserUrl.urlRequest.url)
+    }
+    
     private func makeSUT() -> ApiUserGatewayImpl {
         
         let apiClient = ApiClientMock()
