@@ -6,9 +6,9 @@
 //  Copyright © 2020 JohnRoque Inc. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct UserFormatter {
+struct UserFormatter: UserCellViewModel {
     
     private let user: User
     
@@ -98,6 +98,32 @@ struct UserFormatter {
     
     func getFormattedFollowing() -> String {
         return "Following: \(getFollowing())"
+    }
+    
+    func dequeueCell(tableView: UITableView, indexPath: IndexPath) -> UserCell? {
+        
+        var cell: UserCell? = nil
+        
+        if indexPath.row == 4 {
+            
+            if hasNote() {
+                cell = tableView.dequeueCell(ofType: UserNoteInvertedTableViewCell.self, for: indexPath)
+            } else {
+                cell = tableView.dequeueCell(ofType: UserInvertedTableViewCell.self, for: indexPath)
+            }
+            
+        } else if hasNote() {
+            
+            cell = tableView.dequeueCell(ofType: UserNoteTableViewCell.self, for: indexPath)
+        
+        } else {
+            
+            cell = tableView.dequeueCell(ofType: UserNormalTableViewCell.self, for: indexPath)
+            
+        }
+        
+        return cell
+        
     }
     
 }

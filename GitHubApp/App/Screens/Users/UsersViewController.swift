@@ -129,7 +129,10 @@ class UsersViewController: BaseViewController {
     
     private func configureTableView() {
         
-        tableView.register(cellType: UserTableViewCell.self)
+        tableView.register(cellType: UserNormalTableViewCell.self)
+        tableView.register(cellType: UserInvertedTableViewCell.self)
+        tableView.register(cellType: UserNoteTableViewCell.self)
+        tableView.register(cellType: UserNoteInvertedTableViewCell.self)
         
         userDatasource = UserTableDataSource(tableView)
         

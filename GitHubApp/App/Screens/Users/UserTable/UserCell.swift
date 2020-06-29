@@ -10,7 +10,6 @@ import UIKit
 
 protocol UserCell where Self: UITableViewCell {
     
-    associatedtype T
-    func configureWith(_: T)
+    func configureWith(_ data: UserCellViewModel)
     
 }

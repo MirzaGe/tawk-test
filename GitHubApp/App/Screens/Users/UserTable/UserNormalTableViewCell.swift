@@ -1,20 +1,18 @@
 //
-//  UserTableViewCell.swift
+//  UserNormalTableViewCell.swift
 //  GitHubApp
 //
-//  Created by John Roque Jorillo on 6/26/20.
+//  Created by John Roque Jorillo on 6/29/20.
 //  Copyright © 2020 JohnRoque Inc. All rights reserved.
 //
 
 import UIKit
 import Combine
 
-
-
-class UserTableViewCell: UITableViewCell {
+class UserNormalTableViewCell: UITableViewCell, UserCell {
     
     // MARK: Properties
-    private var imageRequest: AnyCancellable?
+    var imageRequest: AnyCancellable?
 
     // MARK: - UI Properties
     private lazy var containerStackView: UIStackView = {
@@ -25,7 +23,7 @@ class UserTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    private lazy var userImage: UIImageView = {
+    lazy var userImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -39,21 +37,21 @@ class UserTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    private lazy var usernameLabel: UILabel = {
+    lazy var usernameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         label.font = .boldSystemFont(ofSize: 16)
         return label
     }()
     
-    private lazy var urlLabel: UILabel = {
+    lazy var urlLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 16)
         return label
     }()
     
-    private lazy var notesImage: UIImageView = {
+    lazy var notesImage: UIImageView = {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "ic-pen")
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -76,6 +74,7 @@ class UserTableViewCell: UITableViewCell {
         super.prepareForReuse()
         
         userImage.image = nil
+        notesImage.isHidden = true
         self.imageRequest?.cancel()
     }
     
@@ -118,7 +117,7 @@ class UserTableViewCell: UITableViewCell {
         
     }
     
-    func configure(data: UserFormatter, isInverted: Bool) {
+    func configureWith(_ data: UserCellViewModel) {
         
         userImage.shimmer()
         
@@ -127,29 +126,14 @@ class UserTableViewCell: UITableViewCell {
         
         if let url = URL(string: data.getAvatarUrl()) {
             self.imageRequest = ImageLoader.shared.loadImage(from: url).sink { [unowned self] (image) in
-                self.setAvatar(image: image, isInverted: isInverted)
+                
+                self.userImage.removeShimmer()
+                self.userImage.image = image
+                
             }
         }
         
-        notesImage.isHidden = !data.hasNote()
-        
     }
     
-    private func setAvatar(image: UIImage?, isInverted: Bool) {
-        
-        userImage.removeShimmer()
-        
-        if isInverted,
-            let filter = CIFilter(name: "CIColorInvert"),
-                let image = image,
-                let ciimage = CIImage(image: image) {
-            
-                filter.setValue(ciimage, forKey: kCIInputImageKey)
-                let newImage = UIImage(ciImage: filter.outputImage!)
-                self.userImage.image = newImage
-        } else {
-            userImage.image = image
-        }
-    }
-
 }
+

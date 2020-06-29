@@ -17,12 +17,10 @@ protocol UserTableDataSourceEvents {
 
 final class UserTableDataSource: NSObject, UserTableDataSourceEvents {
     
-    typealias Data = UserFormatter
-    typealias Cell = UserTableViewCell
+    typealias Data = UserCellViewModel
     
     var data: BehaviorRelay<[Data]> = BehaviorRelay(value: [])
     var shouldLoadMore: Bool = true
-    var isOffline: Bool = false
     
     private weak var tableView: UITableView?
     
@@ -37,31 +35,8 @@ final class UserTableDataSource: NSObject, UserTableDataSourceEvents {
             })
             .disposed(by: self.disposeBag)
         
-        setObserver()
     }
-    
-    private func setObserver() {
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(offlineMode),
-                                               name: AppNotificationName.offlineMode,
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(onlineMode),
-                                               name: AppNotificationName.onlineMode,
-                                               object: nil)
-        
-    }
-    
-    @objc private func offlineMode() {
-        isOffline = true
-    }
-    
-    @objc private func onlineMode() {
-        isOffline = false
-    }
-    
+
     private let _loadMore: PublishRelay<Void> = PublishRelay()
     var loadMore: ControlEvent<Void> {
         return ControlEvent(events: _loadMore)
@@ -91,10 +66,13 @@ extension UserTableDataSource: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(ofType: Cell.self, for: indexPath)
+        let model = self.data.value[indexPath.row]
         
-        let isInverted = (((indexPath.row + 1) % 4) == 0)
-        cell.configure(data: data.value[indexPath.row], isInverted: isInverted)
+        guard let cell = model.dequeueCell(tableView: tableView, indexPath: indexPath) else {
+            return UITableViewCell()
+        }
+        
+        cell.configureWith(model)
         
         return cell
     }
@@ -102,8 +80,7 @@ extension UserTableDataSource: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         if indexPath.row == (self.data.value.count - 1)
-            && shouldLoadMore
-            && !isOffline {
+            && shouldLoadMore {
             
             let spinner = UIActivityIndicatorView(style: .medium)
             spinner.startAnimating()
@@ -118,8 +95,9 @@ extension UserTableDataSource: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let data = self.data.value[indexPath.row]
-        self._cellClicked.accept(data)
+        if let data = self.data.value[indexPath.row] as? UserFormatter {
+            self._cellClicked.accept(data)
+        }
         
     }
     

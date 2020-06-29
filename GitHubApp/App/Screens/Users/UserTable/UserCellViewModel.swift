@@ -10,6 +10,12 @@ import UIKit
 
 protocol UserCellViewModel {
     
-    func dequeueCell(tableView: UITableView, indexPath: IndexPath)
+    func getId() -> Int
+    func getUsername() -> String
+    func getProfileUrl() -> String
+    func getAvatarUrl() -> String
+    func hasNote() -> Bool
+    
+    func dequeueCell(tableView: UITableView, indexPath: IndexPath) -> UserCell?
     
 }
