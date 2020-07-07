@@ -27,4 +27,19 @@ class StubbedResponseFactory {
         
     }
     
+    static func getStubbedUsers() -> [User] {
+        
+        if let path = Bundle.main.url(forResource: "Users", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: path)
+                let users = try JSONDecoder.snakeToCamelcase.decode([ApiUser].self, from: data)
+                return users.map({ $0.user })
+            } catch {
+            }
+        }
+        
+        return []
+        
+    }
+    
 }
