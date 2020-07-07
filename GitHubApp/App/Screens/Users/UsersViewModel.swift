@@ -39,7 +39,7 @@ class UsersViewModel: UsersViewModelOutputs {
     let isLoadingMoreUsers: PublishRelay<Bool> = PublishRelay()
     var shouldShowLoadMore: PublishRelay<Bool> = PublishRelay()
     let error: PublishRelay<String> = PublishRelay()
- 
+    
     // MARK: - Data properties
     private var _sinceUserId: Int = 0
     private var _users: [UserFormatter] = []

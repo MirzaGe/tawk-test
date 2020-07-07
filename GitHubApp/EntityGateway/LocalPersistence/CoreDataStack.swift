@@ -20,6 +20,12 @@ class CoreDataStackImplementation {
     
     static let sharedInstance = CoreDataStackImplementation()
     
+    // context
+//    lazy var mainContext: NSManagedObjectContext = {
+//        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+//        context.persis
+//    }()
+    
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -53,6 +59,7 @@ class CoreDataStackImplementation {
     
     func saveContext () {
         let context = persistentContainer.viewContext
+        
         if context.hasChanges {
             do {
                 try context.save()

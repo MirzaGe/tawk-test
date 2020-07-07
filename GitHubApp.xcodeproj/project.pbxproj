@@ -20,6 +20,7 @@
 		4A3F996F24A8AC420042CE9B /* UsersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F996E24A8AC420042CE9B /* UsersViewModelTests.swift */; };
 		4A3F997624A8B8320042CE9B /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F997524A8B8320042CE9B /* User.json */; };
 		4A3F997724A8B8320042CE9B /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F997524A8B8320042CE9B /* User.json */; };
+		4A56650D24B3FA5A00613541 /* StubbedResponseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56650C24B3FA5A00613541 /* StubbedResponseFactory.swift */; };
 		4A57635324A9DCBF0020832C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A57635224A9DCBF0020832C /* UserCell.swift */; };
 		4A57635524A9DDBE0020832C /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A57635424A9DDBE0020832C /* UserDataModel.swift */; };
 		4A57635724A9E3270020832C /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A57635624A9E3270020832C /* UserCellViewModel.swift */; };
@@ -113,6 +114,7 @@
 		4A3F996B24A8AC190042CE9B /* UsersGatewayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGatewayTests.swift; sourceTree = "<group>"; };
 		4A3F996E24A8AC420042CE9B /* UsersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModelTests.swift; sourceTree = "<group>"; };
 		4A3F997524A8B8320042CE9B /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		4A56650C24B3FA5A00613541 /* StubbedResponseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbedResponseFactory.swift; sourceTree = "<group>"; };
 		4A57635224A9DCBF0020832C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		4A57635424A9DDBE0020832C /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		4A57635624A9E3270020832C /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
@@ -279,6 +281,8 @@
 		4A3F996924A8AC000042CE9B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4A56650B24B3FA3400613541 /* Factory */,
+				4A56650A24B3F88C00613541 /* Gateways */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -297,6 +301,21 @@
 				4A3F996E24A8AC420042CE9B /* UsersViewModelTests.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A56650A24B3F88C00613541 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		4A56650B24B3FA3400613541 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				4A56650C24B3FA5A00613541 /* StubbedResponseFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		4A5A607424A63C7F0016D35A /* Domain */ = {
@@ -949,6 +968,7 @@
 			files = (
 				4A3F996C24A8AC190042CE9B /* UsersGatewayTests.swift in Sources */,
 				4A3F996224A8A2A40042CE9B /* UserFormatterTests.swift in Sources */,
+				4A56650D24B3FA5A00613541 /* StubbedResponseFactory.swift in Sources */,
 				4A3F996824A8ABFA0042CE9B /* UsersUseCaseTests.swift in Sources */,
 				4A3F996F24A8AC420042CE9B /* UsersViewModelTests.swift in Sources */,
 			);
