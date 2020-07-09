@@ -20,11 +20,16 @@ class CoreDataStackImplementation {
     
     static let sharedInstance = CoreDataStackImplementation()
     
-    // context
-//    lazy var mainContext: NSManagedObjectContext = {
-//        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-//        context.persis
-//    }()
+    // MARK: Context's
+    lazy var mainContext: NSManagedObjectContext = {
+        return persistentContainer.viewContext
+    }()
+    
+    lazy var backgroundContext: NSManagedObjectContext = {
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.parent = mainContext
+        return context
+    }()
     
     // MARK: - Core Data stack
     
