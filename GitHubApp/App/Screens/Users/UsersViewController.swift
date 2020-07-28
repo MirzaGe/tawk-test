@@ -124,6 +124,7 @@ class UsersViewController: BaseViewController {
     private func configureSearchBar() {
         
         self.searchBar.searchResultsUpdater = self
+        self.searchBar.obscuresBackgroundDuringPresentation = false
     
     }
     
