@@ -54,4 +54,4 @@ Online assessment for job application at tawk.to
 - Add Unit test for Gateway & domain layer
 
 ## Any question
-- You can contact me through email: [jorillojohnroque@gmail.com](mailto:jorillojohnroque@gmail.com)
+- You can contact me through email: [shareyscorpi1@gmail.com](mailto:shareyscorpi1@gmail.com)
